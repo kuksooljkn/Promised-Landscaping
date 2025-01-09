@@ -15,7 +15,8 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #eaeaea;
-            background-color: #121212;
+            background: linear-gradient(to bottom, #5a4a3d, #3e3228);
+            background-size: cover;
             margin: 0;
         }
         header {
@@ -55,7 +56,7 @@
             color: #38ef7d;
         }
         .hero {
-            background-image: url('https://via.placeholder.com/1500x500'); /* Replace with your image URL */
+            background-image: url('https://via.placeholder.com/1500x500/green/white?text=Blades+of+Grass'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             color: white;
@@ -138,6 +139,13 @@
             font-size: 0.9rem;
             font-weight: bold;
         }
+        a {
+            color: #38ef7d;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         .quote-form {
             background-color: #1e1e1e;
             color: white;
@@ -166,6 +174,21 @@
             background-color: #11998e;
         }
     </style>
+    <script>
+        function sendQuote(event) {
+            event.preventDefault();
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const phone = document.querySelector('input[name="phone"]').value;
+            const jobDetails = document.querySelector('textarea[name="job-details"]').value;
+
+            alert('Your quote request has been submitted!');
+
+            // Send data via email and phone (simulation)
+            console.log(`Name: ${name}, Email: ${email}, Phone: ${phone}, Job Details: ${jobDetails}`);
+            // Here, you can integrate email API or SMS API to send the data
+        }
+    </script>
 </head>
 <body>
 
@@ -221,13 +244,13 @@
     <h2>Contact Us</h2>
     <p>We'd love to hear from you! Reach out to us for a free quote or to schedule a service.</p>
     <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
-    <p><strong>Email:</strong> <a href="mailto:info@promisedlandscaping.com">info@promisedlandscaping.com</a></p>
+    <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
     <p><strong>Service Area:</strong> Houston, Texas, and surrounding areas</p>
 </div>
 
 <div id="quote-form" class="quote-form">
     <h2>Get a Free Quote</h2>
-    <form>
+    <form onsubmit="sendQuote(event)">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="tel" name="phone" placeholder="Your Phone Number" required>
