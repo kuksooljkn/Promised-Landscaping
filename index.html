@@ -3,109 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Promised Landscaping: Professional lawn care services in Houston, Texas and surrounding areas. Contact us today!">
-    <title>Promised Landscaping | Lawn Care in Houston, TX</title>
+    <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
+    <title>Promised Landscaping | Lawn Care Redefined</title>
 
     <style>
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #eaeaea;
-            background: linear-gradient(to bottom, #5a4a3d, #3e3228);
+            color: #f4f4f4;
+            background: linear-gradient(to bottom, #4e342e, #2c2c2c);
             margin: 0;
         }
+
+        /* Header */
         header {
-            background: linear-gradient(to right, #232526, #414345);
-            color: white;
+            background: linear-gradient(to right, #1e1e1e, #424242);
+            color: #fff;
             padding: 20px 0;
             text-align: center;
         }
+
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
             font-weight: bold;
+            margin-bottom: 10px;
         }
+
         header p {
             font-size: 1.2rem;
         }
+
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
             background-color: #333;
             padding: 10px 0;
         }
+
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.1rem;
+            font-weight: bold;
         }
+
         nav a:hover {
-            color: #38ef7d;
+            color: #81c784;
         }
+
+        /* Hero Section */
         .hero {
             background: url('https://github.com/kuksooljkn/Promised-Landscaping/blob/main/micrograss.jpg?raw=true') no-repeat center center/cover;
-            color: white;
+            color: #fff;
             text-align: center;
             padding: 100px 20px;
         }
+
         .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
+
         .hero p {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
+
+        /* Content Sections */
         .content {
             padding: 50px 20px;
             text-align: center;
         }
+
         .content h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #81c784;
+        }
+
+        .content p {
+            font-size: 1.2rem;
             margin-bottom: 20px;
-            color: #38ef7d;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        footer {
-            background-color: #1e1e1e;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
+
+        /* Quote Form */
         .quote-form {
-            background-color: #1e1e1e;
-            color: white;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 500px;
-            margin: 20px auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background-color: #424242;
+            color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            max-width: 600px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        .quote-form input, .quote-form textarea, .quote-form button {
+
+        .quote-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #81c784;
+        }
+
+        .quote-form input,
+        .quote-form textarea,
+        .quote-form button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
-            border: 1px solid #444;
+            border: 1px solid #666;
             border-radius: 5px;
             font-size: 1rem;
+            background-color: #333;
+            color: #fff;
         }
+
         .quote-form button {
-            background-color: #38ef7d;
-            color: white;
+            background-color: #81c784;
+            color: #fff;
+            font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .quote-form button:hover {
-            background-color: #11998e;
+            background-color: #66bb6a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            color: #ccc;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        footer p a {
+            color: #81c784;
+            text-decoration: none;
+        }
+
+        footer p a:hover {
+            color: #66bb6a;
         }
     </style>
 
@@ -125,9 +181,9 @@
                     });
 
                     if (response.ok) {
-                        alert('Your quote request has been submitted successfully!');
+                        alert('Thank you! Your quote request has been submitted.');
                     } else {
-                        alert('Failed to submit your request. Please try again.');
+                        alert('Oops! Something went wrong. Please try again.');
                     }
                 } catch (error) {
                     console.error('Error:', error);
@@ -141,45 +197,50 @@
 
 <header>
     <h1>Promised Landscaping</h1>
-    <p>Professional Lawn Care Services in Houston, Texas</p>
+    <p>Premium Lawn Care Services in Houston, Texas</p>
 </header>
 
 <nav>
     <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <a href="#services">Our Services</a>
+    <a href="#contact">Contact Us</a>
 </nav>
 
-<div class="hero">
-    <h2>Transforming Lawns, Transforming Lives</h2>
-    <p>Your dream lawn is just a call away. Experience the difference with Promised Landscaping!</p>
-</div>
+<section class="hero">
+    <h2>Your Dream Lawn, Delivered</h2>
+    <p>From lush green grass to expertly maintained landscapes, we make your vision a reality.</p>
+</section>
 
-<div id="about" class="content">
-    <h2>About Us</h2>
-    <p>At Promised Landscaping, we deliver high-quality lawn care services to keep your outdoor space beautiful and healthy all year round.</p>
-</div>
+<section id="about" class="content">
+    <h2>Who We Are</h2>
+    <p>At Promised Landscaping, we specialize in transforming outdoor spaces into stunning works of art. With our expertise and dedication, your lawn will always look its best.</p>
+</section>
 
-<div id="contact" class="content">
+<section id="services" class="content">
+    <h2>Our Services</h2>
+    <p>We offer a wide range of landscaping services, including lawn maintenance, yard cleanup, and seasonal planting. Whatever your outdoor needs, we've got you covered.</p>
+</section>
+
+<section id="contact" class="content">
     <h2>Contact Us</h2>
-    <p>Reach out to us for a free quote or to schedule a service:</p>
-    <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
-    <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
-</div>
+    <p>Have questions or ready to get started? Get in touch with us today:</p>
+    <p><strong>Phone:</strong> <a href="tel:2817575012" class="contact-link">281-757-5012</a></p>
+    <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com" class="contact-link">promisedlandscapingleo@gmail.com</a></p>
+</section>
 
-<div id="quote" class="quote-form">
-    <h2>Get a Free Quote</h2>
+<section id="quote" class="quote-form">
+    <h2>Request a Free Quote</h2>
     <form>
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        <textarea name="jobDetails" placeholder="Briefly describe the job" rows="5" required></textarea>
+        <input type="tel" name="phone" placeholder="Your Phone" required>
+        <textarea name="jobDetails" placeholder="Describe Your Lawn Care Needs" rows="5" required></textarea>
         <button type="submit">Submit</button>
     </form>
-</div>
+</section>
 
 <footer>
-    <p>&copy; 2025 Promised Landscaping. All rights reserved.</p>
+    <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
 </footer>
 
 </body>
