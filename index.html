@@ -33,6 +33,7 @@
         header h1 {
             font-size: 3rem;
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
         header p {
@@ -61,7 +62,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://github.com/kuksooljkn/Promised-Landscaping/blob/main/micrograss.jpg?raw=true') center/cover;
+            background: url('https://github.com/kuksooljkn/Promised-Landscaping/blob/main/micrograss.jpg?raw=true') no-repeat center center/cover;
             color: #fff;
             text-align: center;
             padding: 100px 20px;
@@ -70,6 +71,7 @@
         .hero h2 {
             font-size: 3.5rem;
             font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .hero p {
@@ -92,8 +94,10 @@
 
         .content p {
             font-size: 1.2rem;
+            margin-bottom: 20px;
             max-width: 700px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Quote Form */
@@ -148,6 +152,7 @@
 
         footer p {
             font-size: 0.9rem;
+            margin: 0;
         }
 
         footer p a {
@@ -162,11 +167,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const form = document.querySelector('.quote-form form');
-            form.addEventListener('submit', async (event) => {
+            document.querySelector('.quote-form form').addEventListener('submit', async (event) => {
                 event.preventDefault();
 
-                const formData = new FormData(form);
+                const formData = new FormData(event.target);
                 const data = Object.fromEntries(formData.entries());
 
                 try {
@@ -178,9 +182,8 @@
 
                     if (response.ok) {
                         alert('Thank you! Your quote request has been submitted.');
-                        form.reset();
                     } else {
-                        alert('Error submitting your request. Please try again.');
+                        alert('Oops! Something went wrong. Please try again.');
                     }
                 } catch (error) {
                     console.error('Error:', error);
@@ -200,37 +203,44 @@
 <nav>
     <a href="#about">About Us</a>
     <a href="#services">Our Services</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact">Contact Us</a>
 </nav>
 
 <section class="hero">
-    <h2>Your Dream Lawn Awaits</h2>
-    <p>From lush landscapes to professional maintenance, we bring your vision to life.</p>
+    <h2>Your Dream Lawn, Delivered</h2>
+    <p>From lush green grass to expertly maintained landscapes, we make your vision a reality.</p>
 </section>
 
 <section id="about" class="content">
-    <h2>About Us</h2>
-    <p>Promised Landscaping is a dedicated team of professionals transforming outdoor spaces in Houston. With years of expertise, we create lawns that impress.</p>
+    <h2>Who We Are</h2>
+    <p>At Promised Landscaping, we specialize in transforming outdoor spaces into stunning works of art. With our expertise and dedication, your lawn will always look its best.</p>
 </section>
 
 <section id="services" class="content">
     <h2>Our Services</h2>
-    <p>From lawn maintenance and seasonal planting to yard cleanups and custom designs, we’ve got everything you need to enhance your outdoor space.</p>
+    <p>We offer a wide range of landscaping services, including lawn maintenance, yard cleanup, and seasonal planting. Whatever your outdoor needs, we've got you covered.</p>
+</section>
+
+<section id="contact" class="content">
+    <h2>Contact Us</h2>
+    <p>Have questions or ready to get started? Get in touch with us today:</p>
+    <p><strong>Phone:</strong> <a href="tel:2817575012" class="contact-link">281-757-5012</a></p>
+    <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com" class="contact-link">promisedlandscapingleo@gmail.com</a></p>
 </section>
 
 <section id="quote" class="quote-form">
-    <h2>Get a Free Quote</h2>
+    <h2>Request a Free Quote</h2>
     <form>
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        <textarea name="jobDetails" placeholder="Tell us about your lawn care needs" rows="5" required></textarea>
+        <input type="tel" name="phone" placeholder="Your Phone" required>
+        <textarea name="jobDetails" placeholder="Describe Your Lawn Care Needs" rows="5" required></textarea>
         <button type="submit">Submit</button>
     </form>
 </section>
 
 <footer>
-    <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a></p>
+    <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
 </footer>
 
 </body>
