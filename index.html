@@ -30,12 +30,6 @@
             text-align: center;
         }
 
-        header img {
-            width: 500px; /* Larger logo size */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 10px;
-        }
-
         header h1 {
             font-size: 3rem;
             font-weight: bold;
@@ -192,7 +186,7 @@
 <body>
 
 <header>
-    <h1>Promised Landscaping </h1>   
+    <h1>Promised Landscaping</h1>   
     <p>"Tomorrow isn’t promised, but the land sure is."</p>
 </header>
 
@@ -225,14 +219,82 @@
 
 <section id="quote" class="quote-form">
     <h2>Request a Free Quote</h2>
-    <form>
+    <form id="quoteForm">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="tel" name="phone" placeholder="Your Phone Number" required>
         <textarea name="jobDetails" placeholder="Tell us about your lawn care needs" rows="5" required></textarea>
         <button type="submit">Submit</button>
     </form>
+    <div id="quoteResponse"></div>
 </section>
+
+<section id="calculator" class="quote-form">
+    <h2>Square Footage Calculator</h2>
+    <form id="calculatorForm">
+        <input type="number" name="squareFootage" id="squareFootage" placeholder="Enter square footage" required>
+        <button type="submit">Calculate Estimate</button>
+    </form>
+    <div id="calculatorResponse"></div>
+</section>
+
+<script>
+    // Handle form submission for "Request a Free Quote"
+    document.getElementById('quoteForm').addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent form from reloading the page
+
+        const formData = new FormData(event.target);
+        const jsonData = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(jsonData),
+            });
+
+            const result = await response.json();
+            const responseDiv = document.getElementById('quoteResponse');
+
+            if (response.ok) {
+                responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
+                event.target.reset();
+            } else {
+                responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            document.getElementById('quoteResponse').innerHTML = `<p style="color: red;">Failed to submit form. Please try again.</p>`;
+        }
+    });
+
+    // Handle square footage calculation
+    document.getElementById('calculatorForm').addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent form from reloading the page
+
+        const squareFootage = document.getElementById('squareFootage').value;
+
+        try {
+            const response = await fetch('/calculate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ squareFootage: parseFloat(squareFootage) }),
+            });
+
+            const result = await response.json();
+            const responseDiv = document.getElementById('calculatorResponse');
+
+            if (response.ok) {
+                responseDiv.innerHTML = `<p style="color: green;">Estimated Price: ${result.totalPrice}</p>`;
+            } else {
+                responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+            }
+        } catch (error) {
+            console.error('Error calculating price:', error);
+            document.getElementById('calculatorResponse').innerHTML = `<p style="color: red;">Failed to calculate. Please try again.</p>`;
+        }
+    });
+</script>
 
 <footer>
     <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
