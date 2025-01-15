@@ -247,7 +247,7 @@
         const jsonData = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch('/submit', {
+            const response = await fetch('http://127.0.0.1:5000/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(jsonData),
@@ -275,7 +275,7 @@
         const squareFootage = document.getElementById('squareFootage').value;
 
         try {
-            const response = await fetch('/calculate', {
+            const response = await fetch('http://127.0.0.1:5000/calculate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ squareFootage: parseFloat(squareFootage) }),
