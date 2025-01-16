@@ -221,52 +221,39 @@
     </section>
 
     <section id="quote" class="quote-form">
-        <h2>Request a Free Quote</h2>
+        <h2>Request a Quote and Book an Appointment</h2>
         <form id="quoteForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="tel" name="phone" placeholder="Your Phone Number" required>
-            <textarea name="jobDetails" placeholder="Tell us about your lawn care needs" rows="5" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="quoteResponse"></div>
-    </section>
 
-    <section id="calculator" class="quote-form">
-        <h2>Square Footage Calculator</h2>
-        <form id="calculatorForm">
-            <input type="number" name="squareFootage" id="squareFootage" placeholder="Enter square footage" required>
-            <select name="severity" id="severity" required>
+            <h3>Square Footage Information</h3>
+            <input type="number" name="squareFootage" placeholder="Enter square footage" required>
+            <select name="severity" required>
                 <option value="" disabled selected>Choose severity</option>
                 <option value="light">Light</option>
                 <option value="medium">Medium</option>
                 <option value="severe">Severe</option>
             </select>
-            <select name="serviceType" id="serviceType" required>
+            <select name="serviceType" required>
                 <option value="" disabled selected>Select service type</option>
                 <option value="mowing">Mowing</option>
                 <option value="cleanup">Yard Cleanup</option>
                 <option value="sod">Sod Installation</option>
             </select>
-            <button type="submit">Calculate Estimate</button>
-        </form>
-        <div id="calculatorResponse"></div>
-    </section>
 
-    <section id="scheduler" class="quote-form">
-        <h2>Schedule an Appointment</h2>
-        <form id="schedulerForm">
-            <input type="date" name="appointmentDate" id="appointmentDate" required>
-            <input type="time" name="appointmentTime" id="appointmentTime" required>
-            <button type="submit">Book Appointment</button>
+            <h3>Appointment Details</h3>
+            <input type="date" name="appointmentDate" required>
+            <input type="time" name="appointmentTime" required>
+
+            <button type="submit">Submit</button>
         </form>
-        <div id="schedulerResponse"></div>
+        <div id="quoteResponse"></div>
     </section>
 
     <script>
-        // Handle form submission for "Request a Free Quote"
         document.getElementById('quoteForm').addEventListener('submit', async (event) => {
-            event.preventDefault(); // Prevent form from reloading the page
+            event.preventDefault();
 
             const formData = new FormData(event.target);
             const jsonData = Object.fromEntries(formData.entries());
@@ -290,63 +277,6 @@
             } catch (error) {
                 console.error('Error submitting form:', error);
                 document.getElementById('quoteResponse').innerHTML = `<p style="color: red;">Failed to submit form. Please try again.</p>`;
-            }
-        });
-
-        // Handle square footage calculation
-        document.getElementById('calculatorForm').addEventListener('submit', async (event) => {
-            event.preventDefault(); // Prevent form from reloading the page
-
-            const squareFootage = parseFloat(document.getElementById('squareFootage').value);
-            const severity = document.getElementById('severity').value;
-            const serviceType = document.getElementById('serviceType').value;
-
-            try {
-                const response = await fetch('https://bf83-2600-1700-b7a-e800-00-48.ngrok-free.app/calculate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ squareFootage, severity, serviceType }),
-                });
-
-                const result = await response.json();
-                const responseDiv = document.getElementById('calculatorResponse');
-
-                if (response.ok) {
-                    responseDiv.innerHTML = `<p style="color: green;">Estimated Price: ${result.totalPrice}<br>Completion Time: ${result.estimatedTime}</p>`;
-                } else {
-                    responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
-                }
-            } catch (error) {
-                console.error('Error calculating price:', error);
-                document.getElementById('calculatorResponse').innerHTML = `<p style="color: red;">Failed to calculate. Please try again.</p>`;
-            }
-        });
-
-        // Handle appointment scheduling
-        document.getElementById('schedulerForm').addEventListener('submit', async (event) => {
-            event.preventDefault();
-
-            const appointmentDate = document.getElementById('appointmentDate').value;
-            const appointmentTime = document.getElementById('appointmentTime').value;
-
-            try {
-                const response = await fetch('https://bf83-2600-1700-b7a-e800-00-48.ngrok-free.app/schedule', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ appointmentDate, appointmentTime }),
-                });
-
-                const result = await response.json();
-                const responseDiv = document.getElementById('schedulerResponse');
-
-                if (response.ok) {
-                    responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
-                } else {
-                    responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
-                }
-            } catch (error) {
-                console.error('Error scheduling appointment:', error);
-                document.getElementById('schedulerResponse').innerHTML = `<p style="color: red;">Failed to schedule appointment. Please try again.</p>`;
             }
         });
     </script>
