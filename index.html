@@ -1,87 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promised Landscaping</title>
+    <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
+    <title>Promised Landscaping | Your Promised Land</title>
+
     <style>
-        body { font-family: Arial, sans-serif; background: #2c2c2c; color: #fff; }
-        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: #424242; border-radius: 8px; }
-        h2 { text-align: center; color: #81c784; }
-        table { width: 100%; margin: 20px 0; border-collapse: collapse; }
-        th, td { padding: 10px; border: 1px solid #666; }
-        th { background: #333; color: #fff; }
-        .form-group { margin: 15px 0; }
-        label { display: block; margin-bottom: 5px; }
-        input, select, button { width: 100%; padding: 10px; margin: 5px 0; border-radius: 4px; border: 1px solid #666; }
-        button { background: #81c784; color: #fff; font-weight: bold; }
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #f4f4f4;
+            background: linear-gradient(to bottom, #4e342e, #2c2c2c);
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #1e1e1e, #424242);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #81c784;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://github.com/kuksooljkn/Promised-Landscaping/blob/main/micrograss.jpg?raw=true') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .content {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #81c784;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Section */
+        #pricing {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: #424242;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #pricing h2 {
+            text-align: center;
+            color: #81c784;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #666;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #333;
+            color: #fff;
+        }
+
+        /* Quote Form */
+        .quote-form {
+            background-color: #424242;
+            color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #81c784;
+        }
+
+        .quote-form input,
+        .quote-form select,
+        .quote-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .quote-form button {
+            background-color: #81c784;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quote-form button:hover {
+            background-color: #66bb6a;
+        }
+
+        .instant-estimate {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background-color: #424242;
+            color: #fff;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #38ef7d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            color: #ccc;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer p a {
+            color: #81c784;
+            text-decoration: none;
+        }
+
+        footer p a:hover {
+            color: #66bb6a;
+        }
     </style>
 </head>
+
 <body>
-    <div class="container">
+
+    <header>
+        <h1>Promised Landscaping</h1>
+        <p>"Tomorrow isn’t promised, but the land sure is."</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Your Dream Lawn Awaits</h2>
+        <p>From lush landscapes to professional maintenance, we bring your vision to life with faith and dedication.</p>
+    </section>
+
+    <section id="about" class="content">
+        <h2>About Us</h2>
+        <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
+    </section>
+
+    <section id="services" class="content">
+        <h2>Our Services</h2>
+        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we’ve got everything you need to enhance your outdoor space.</p>
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing Sheet</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yard Mowing</td>
+                    <td>Push mowing, edging, and blowing.</td>
+                    <td>$50 per yard</td>
+                </tr>
+                <tr>
+                    <td>Hedge Trimming</td>
+                    <td>Trimming shrubs and hedges.</td>
+                    <td>$25 per service</td>
+                </tr>
+                <tr>
+                    <td>Leaf Blowing</td>
+                    <td>Clearing leaves from lawn and paths.</td>
+                    <td>$15 per service</td>
+                </tr>
+                <tr>
+                    <td>Weeding</td>
+                    <td>Manual removal of weeds.</td>
+                    <td>$30/hour</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="quote" class="quote-form">
         <h2>Instant Quote and Book an Appointment</h2>
-        <div id="pricing">
-            <h3>Pricing Sheet</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Yard Mowing</td><td>Push mowing, edging, blowing</td><td>$50 per yard</td></tr>
-                    <tr><td>Hedge Trimming</td><td>Trimming shrubs and hedges</td><td>$25 per service</td></tr>
-                    <tr><td>Leaf Blowing</td><td>Clearing leaves</td><td>$15 per service</td></tr>
-                    <tr><td>Weeding</td><td>Manual removal</td><td>$30/hour</td></tr>
-                </tbody>
-            </table>
-        </div>
         <form id="quoteForm">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="squareFootage">Square Footage</label>
-                <input type="number" id="squareFootage" name="squareFootage" required>
-            </div>
-            <div class="form-group">
-                <label for="severity">Severity</label>
-                <select id="severity" name="severity" required>
-                    <option value="">Select</option>
-                    <option value="light">Light</option>
-                    <option value="medium">Medium</option>
-                    <option value="severe">Severe</option>
-                </select>
-            </div>
-            <button type="submit">Get Estimate</button>
-            <div id="output"></div>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+            <h3>Square Footage Information</h3>
+            <input type="number" name="squareFootage" id="squareFootage" placeholder="Enter square footage" required>
+            <select name="severity" id="severity" required>
+                <option value="" disabled selected>Choose severity</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="severe">Severe</option>
+            </select>
+            <select name="serviceType" id="serviceType" required>
+                <option value="" disabled selected>Select service type</option>
+                <option value="mowing">Mowing</option>
+                <option value="cleanup">Seasonal Cleanup</option>
+                <option value="sod">Sod Installation</option>
+            </select>
+
+            <div id="instantEstimate" class="instant-estimate"></div>
+
+            <h3>Appointment Details</h3>
+            <input type="date" name="appointmentDate" required>
+            <input type="time" name="appointmentTime" required>
+
+            <button type="submit">Submit</button>
         </form>
-    </div>
+        <div id="quoteResponse"></div>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
+        <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
+    </section>
+
     <script>
+        // Handle square footage calculation instantly
+        const squareFootageInput = document.getElementById('squareFootage');
+        const severitySelect = document.getElementById('severity');
+        const serviceTypeSelect = document.getElementById('serviceType');
+        const instantEstimateDiv = document.getElementById('instantEstimate');
+
+        async function updateInstantEstimate() {
+            const squareFootage = parseFloat(squareFootageInput.value) || 0;
+            const severity = severitySelect.value;
+            const serviceType = serviceTypeSelect.value;
+
+            if (squareFootage > 0 && severity && serviceType) {
+                try {
+                    const response = await fetch('http://127.0.0.1:5000/calculate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ squareFootage, severity, serviceType }),
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        instantEstimateDiv.innerHTML = `Estimated Price: $${result.totalPrice}<br>Completion Time: ${result.estimatedTime}`;
+                    } else {
+                        instantEstimateDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                    }
+                } catch (error) {
+                    console.error('Error calculating estimate:', error);
+                    instantEstimateDiv.innerHTML = `<p style="color: red;">Failed to calculate estimate. Please try again.</p>`;
+                }
+            } else {
+                instantEstimateDiv.innerHTML = '';
+            }
+        }
+
+        squareFootageInput.addEventListener('input', updateInstantEstimate);
+        severitySelect.addEventListener('change', updateInstantEstimate);
+        serviceTypeSelect.addEventListener('change', updateInstantEstimate);
+
+        // Handle form submission for quote and appointment
         document.getElementById('quoteForm').addEventListener('submit', async (event) => {
             event.preventDefault();
-            const data = {
-                name: document.getElementById('name').value,
-                squareFootage: document.getElementById('squareFootage').value,
-                severity: document.getElementById('severity').value
-            };
+
+            const formData = new FormData(event.target);
+            const jsonData = Object.fromEntries(formData.entries());
+
             try {
-                const response = await fetch('http://127.0.0.1:5000/calculate', {
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
+                const response = await fetch('http://127.0.0.1:5000/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(jsonData),
                 });
+
                 const result = await response.json();
+                const responseDiv = document.getElementById('quoteResponse');
+
                 if (response.ok) {
-                    document.getElementById('output').innerText = `Estimate: $${result.totalPrice}, Time: ${result.estimatedTime}`;
+                    responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
+                    event.target.reset();
+                    instantEstimateDiv.innerHTML = '';
                 } else {
-                    document.getElementById('output').innerText = result.error;
+                    responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
                 }
             } catch (error) {
-                document.getElementById('output').innerText = 'Failed to get estimate.';
+                console.error('Error submitting form:', error);
+                document.getElementById('quoteResponse').innerHTML = `<p style="color: red;">Failed to submit form. Please try again.</p>`;
             }
         });
     </script>
+
+    <footer>
+        <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
+    </footer>
+
 </body>
+
 </html>
