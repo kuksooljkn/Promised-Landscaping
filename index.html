@@ -98,6 +98,38 @@
             margin: 0 auto;
         }
 
+        /* Pricing Table */
+        .pricing-table {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: #424242;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 10px;
+            border: 1px solid #666;
+        }
+
+        .pricing-table th {
+            background: #333;
+            color: #fff;
+        }
+
+        .pricing-table td {
+            background: #555;
+        }
+
         /* Quote Form */
         .quote-form {
             background-color: #424242;
@@ -211,6 +243,36 @@
     <section id="services" class="content">
         <h2>Our Services</h2>
         <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we’ve got everything you need to enhance your outdoor space.</p>
+    </section>
+
+    <section id="pricing" class="pricing-table">
+        <h2>Our Packages</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Package</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Weekly Maintenance</td>
+                    <td>Mowing, edging, and blowing</td>
+                    <td>$50/week</td>
+                </tr>
+                <tr>
+                    <td>Deluxe Package</td>
+                    <td>Mowing, edging, blowing, and trimming</td>
+                    <td>$75/week</td>
+                </tr>
+                <tr>
+                    <td>Seasonal Cleanup</td>
+                    <td>Mowing, leaf removal, and weeding</td>
+                    <td>$100/session</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 
     <section id="quote" class="quote-form">
