@@ -163,6 +163,14 @@
             background-color: #66bb6a;
         }
 
+        /* Instant Estimate Output */
+        .instant-estimate {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 15px;
+            text-align: center;
+        }
+
         /* Footer */
         footer {
             background-color: #1e1e1e;
@@ -221,26 +229,28 @@
     </section>
 
     <section id="quote" class="quote-form">
-        <h2>Request a Quote and Book an Appointment</h2>
+        <h2>Instant Quote and Book an Appointment</h2>
         <form id="quoteForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="tel" name="phone" placeholder="Your Phone Number" required>
 
             <h3>Square Footage Information</h3>
-            <input type="number" name="squareFootage" placeholder="Enter square footage" required>
-            <select name="severity" required>
+            <input type="number" name="squareFootage" id="squareFootage" placeholder="Enter square footage" required>
+            <select name="severity" id="severity" required>
                 <option value="" disabled selected>Choose severity</option>
                 <option value="light">Light</option>
                 <option value="medium">Medium</option>
                 <option value="severe">Severe</option>
             </select>
-            <select name="serviceType" required>
+            <select name="serviceType" id="serviceType" required>
                 <option value="" disabled selected>Select service type</option>
                 <option value="mowing">Mowing</option>
                 <option value="cleanup">Yard Cleanup</option>
                 <option value="sod">Sod Installation</option>
             </select>
+
+            <div id="instantEstimate" class="instant-estimate"></div>
 
             <h3>Appointment Details</h3>
             <input type="date" name="appointmentDate" required>
@@ -252,6 +262,46 @@
     </section>
 
     <script>
+        // Handle square footage calculation instantly
+        const squareFootageInput = document.getElementById('squareFootage');
+        const severitySelect = document.getElementById('severity');
+        const serviceTypeSelect = document.getElementById('serviceType');
+        const instantEstimateDiv = document.getElementById('instantEstimate');
+
+        async function updateInstantEstimate() {
+            const squareFootage = parseFloat(squareFootageInput.value) || 0;
+            const severity = severitySelect.value;
+            const serviceType = serviceTypeSelect.value;
+
+            if (squareFootage > 0 && severity && serviceType) {
+                try {
+                    const response = await fetch('https://bf83-2600-1700-b7a-e800-00-48.ngrok-free.app/calculate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ squareFootage, severity, serviceType }),
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        instantEstimateDiv.innerHTML = `Estimated Price: $${result.totalPrice}<br>Completion Time: ${result.estimatedTime}`;
+                    } else {
+                        instantEstimateDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                    }
+                } catch (error) {
+                    console.error('Error calculating estimate:', error);
+                    instantEstimateDiv.innerHTML = `<p style="color: red;">Failed to calculate estimate. Please try again.</p>`;
+                }
+            } else {
+                instantEstimateDiv.innerHTML = '';
+            }
+        }
+
+        squareFootageInput.addEventListener('input', updateInstantEstimate);
+        severitySelect.addEventListener('change', updateInstantEstimate);
+        serviceTypeSelect.addEventListener('change', updateInstantEstimate);
+
+        // Handle form submission for quote and appointment
         document.getElementById('quoteForm').addEventListener('submit', async (event) => {
             event.preventDefault();
 
@@ -271,6 +321,7 @@
                 if (response.ok) {
                     responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
                     event.target.reset();
+                    instantEstimateDiv.innerHTML = '';
                 } else {
                     responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
                 }
