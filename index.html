@@ -98,13 +98,6 @@
             margin: 0 auto;
         }
 
-        /* Logo */
-         .logo {
-            max-width: 150px;
-            display: block;
-            margin: 0 auto;
-         }
-
         /* Pricing Section */
         #pricing {
             margin: 30px auto;
@@ -238,9 +231,8 @@
 <body>
 
     <header>
-        <img src="https://github.com/kuksooljkn/Promised-Landscaping/blob/main/promised%20landscaping.jpg?raw=true" alt="Promised Landscaping Logo" style="max-width: 150px;">
         <h1>Promised Landscaping</h1>
-        <p>"Tomorrow isn’t promised, but the land sure is."</p>
+        <p>"Tomorrow isn't promised, but the land sure is."</p>
     </header>
 
     <nav>
@@ -262,7 +254,7 @@
 
     <section id="services" class="content">
         <h2>Our Services</h2>
-        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we’ve got everything you need to enhance your outdoor space.</p>
+        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we've got everything you need to enhance your outdoor space.</p>
     </section>
 
     <section id="pricing">
@@ -277,24 +269,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Yard Mowing</td>
-                    <td>Push mowing, edging, and blowing.</td>
-                    <td>$50 per yard</td>
+                    <td>Weekly Maintenance</td>
+                    <td>Mowing, edging, and blowing.</td>
+                    <td>$50/week</td>
                 </tr>
                 <tr>
-                    <td>Hedge Trimming</td>
-                    <td>Trimming shrubs and hedges.</td>
-                    <td>$25 per service</td>
+                    <td>Deluxe Package</td>
+                    <td>Mowing, edging, blowing, and trimming.</td>
+                    <td>$75/week</td>
                 </tr>
                 <tr>
-                    <td>Leaf Blowing</td>
-                    <td>Clearing leaves from lawn and paths.</td>
-                    <td>$15 per service</td>
-                </tr>
-                <tr>
-                    <td>Weeding</td>
-                    <td>Manual removal of weeds.</td>
-                    <td>$30/hour</td>
+                    <td>Seasonal Cleanup</td>
+                    <td>Mowing, leaf removal, and weeding.</td>
+                    <td>$100/session</td>
                 </tr>
             </tbody>
         </table>
@@ -309,17 +296,13 @@
 
             <h3>Square Footage Information</h3>
             <input type="number" name="squareFootage" id="squareFootage" placeholder="Enter square footage" required>
-            <select name="severity" id="severity" required>
-                <option value="" disabled selected>Choose severity</option>
-                <option value="light">Light</option>
-                <option value="medium">Medium</option>
-                <option value="severe">Severe</option>
-            </select>
-            <select name="serviceType" id="serviceType" required>
-                <option value="" disabled selected>Select service type</option>
-                <option value="mowing">Mowing</option>
-                <option value="cleanup">Seasonal Cleanup</option>
-                <option value="sod">Sod Installation</option>
+
+            <h3>Select a Package</h3>
+            <select name="packageType" id="packageType" required>
+                <option value="" disabled selected>Select package type</option>
+                <option value="weekly">Weekly Maintenance</option>
+                <option value="deluxe">Deluxe Package</option>
+                <option value="seasonal">Seasonal Cleanup</option>
             </select>
 
             <div id="instantEstimate" class="instant-estimate"></div>
@@ -342,21 +325,19 @@
     <script>
         // Handle square footage calculation instantly
         const squareFootageInput = document.getElementById('squareFootage');
-        const severitySelect = document.getElementById('severity');
-        const serviceTypeSelect = document.getElementById('serviceType');
+        const packageTypeSelect = document.getElementById('packageType');
         const instantEstimateDiv = document.getElementById('instantEstimate');
 
         async function updateInstantEstimate() {
             const squareFootage = parseFloat(squareFootageInput.value) || 0;
-            const severity = severitySelect.value;
-            const serviceType = serviceTypeSelect.value;
+            const packageType = packageTypeSelect.value;
 
-            if (squareFootage > 0 && severity && serviceType) {
+            if (squareFootage > 0 && packageType) {
                 try {
                     const response = await fetch('http://127.0.0.1:5000/calculate', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ squareFootage, severity, serviceType }),
+                        body: JSON.stringify({ squareFootage, packageType }),
                     });
 
                     const result = await response.json();
@@ -376,8 +357,7 @@
         }
 
         squareFootageInput.addEventListener('input', updateInstantEstimate);
-        severitySelect.addEventListener('change', updateInstantEstimate);
-        serviceTypeSelect.addEventListener('change', updateInstantEstimate);
+        packageTypeSelect.addEventListener('change', updateInstantEstimate);
 
         // Handle form submission for quote and appointment
         document.getElementById('quoteForm').addEventListener('submit', async (event) => {
