@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,12 +112,12 @@
         }
 
         .contact-info a {
-            color: #fff; /* Contact links styled in white */
+            color: #fff;
             text-decoration: none;
         }
 
         .contact-info a:hover {
-            color: #38ef7d; /* Hover effect for contact links */
+            color: #38ef7d;
         }
 
         /* Quote Form */
@@ -138,6 +139,7 @@
 
         .quote-form input,
         .quote-form textarea,
+        .quote-form select,
         .quote-form button {
             width: 100%;
             padding: 12px;
@@ -183,122 +185,176 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Promised Landscaping</h1>   
-    <p>"Tomorrow isn’t promised, but the land sure is."</p>
-</header>
+    <header>
+        <h1>Promised Landscaping</h1>
+        <p>"Tomorrow isn’t promised, but the land sure is."</p>
+    </header>
 
-<nav>
-    <a href="#about">About Us</a>
-    <a href="#services">Our Services</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<section class="hero">
-    <h2>Your Dream Lawn Awaits</h2>
-    <p>From lush landscapes to professional maintenance, we bring your vision to life with faith and dedication.</p>
-</section>
+    <section class="hero">
+        <h2>Your Dream Lawn Awaits</h2>
+        <p>From lush landscapes to professional maintenance, we bring your vision to life with faith and dedication.</p>
+    </section>
 
-<section id="about" class="content">
-    <h2>About Us</h2>
-    <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
-</section>
+    <section id="about" class="content">
+        <h2>About Us</h2>
+        <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
+    </section>
 
-<section id="services" class="content">
-    <h2>Our Services</h2>
-    <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we’ve got everything you need to enhance your outdoor space.</p>
-</section>
+    <section id="services" class="content">
+        <h2>Our Services</h2>
+        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we’ve got everything you need to enhance your outdoor space.</p>
+    </section>
 
-<section id="contact" class="contact-info">
-    <h2>Contact Us</h2>
-    <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
-    <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
-</section>
+    <section id="contact" class="contact-info">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
+        <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
+    </section>
 
-<section id="quote" class="quote-form">
-    <h2>Request a Free Quote</h2>
-    <form id="quoteForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        <textarea name="jobDetails" placeholder="Tell us about your lawn care needs" rows="5" required></textarea>
-        <button type="submit">Submit</button>
-    </form>
-    <div id="quoteResponse"></div>
-</section>
+    <section id="quote" class="quote-form">
+        <h2>Request a Free Quote</h2>
+        <form id="quoteForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <textarea name="jobDetails" placeholder="Tell us about your lawn care needs" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="quoteResponse"></div>
+    </section>
 
-<section id="calculator" class="quote-form">
-    <h2>Square Footage Calculator</h2>
-    <form id="calculatorForm">
-        <input type="number" name="squareFootage" id="squareFootage" placeholder="Enter square footage" required>
-        <button type="submit">Calculate Estimate</button>
-    </form>
-    <div id="calculatorResponse"></div>
-</section>
+    <section id="calculator" class="quote-form">
+        <h2>Square Footage Calculator</h2>
+        <form id="calculatorForm">
+            <input type="number" name="squareFootage" id="squareFootage" placeholder="Enter square footage" required>
+            <select name="severity" id="severity" required>
+                <option value="" disabled selected>Choose severity</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="severe">Severe</option>
+            </select>
+            <select name="serviceType" id="serviceType" required>
+                <option value="" disabled selected>Select service type</option>
+                <option value="mowing">Mowing</option>
+                <option value="cleanup">Yard Cleanup</option>
+                <option value="sod">Sod Installation</option>
+            </select>
+            <button type="submit">Calculate Estimate</button>
+        </form>
+        <div id="calculatorResponse"></div>
+    </section>
 
-<script>
-    // Handle form submission for "Request a Free Quote"
-    document.getElementById('quoteForm').addEventListener('submit', async (event) => {
-        event.preventDefault(); // Prevent form from reloading the page
+    <section id="scheduler" class="quote-form">
+        <h2>Schedule an Appointment</h2>
+        <form id="schedulerForm">
+            <input type="date" name="appointmentDate" id="appointmentDate" required>
+            <input type="time" name="appointmentTime" id="appointmentTime" required>
+            <button type="submit">Book Appointment</button>
+        </form>
+        <div id="schedulerResponse"></div>
+    </section>
 
-        const formData = new FormData(event.target);
-        const jsonData = Object.fromEntries(formData.entries());
+    <script>
+        // Handle form submission for "Request a Free Quote"
+        document.getElementById('quoteForm').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent form from reloading the page
 
-        try {
-            const response = await fetch('http://127.0.0.1:5000/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(jsonData),
-            });
+            const formData = new FormData(event.target);
+            const jsonData = Object.fromEntries(formData.entries());
 
-            const result = await response.json();
-            const responseDiv = document.getElementById('quoteResponse');
+            try {
+                const response = await fetch('http://127.0.0.1:5000/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(jsonData),
+                });
 
-            if (response.ok) {
-                responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
-                event.target.reset();
-            } else {
-                responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                const result = await response.json();
+                const responseDiv = document.getElementById('quoteResponse');
+
+                if (response.ok) {
+                    responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
+                    event.target.reset();
+                } else {
+                    responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                document.getElementById('quoteResponse').innerHTML = `<p style="color: red;">Failed to submit form. Please try again.</p>`;
             }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            document.getElementById('quoteResponse').innerHTML = `<p style="color: red;">Failed to submit form. Please try again.</p>`;
-        }
-    });
+        });
 
-    // Handle square footage calculation
-    document.getElementById('calculatorForm').addEventListener('submit', async (event) => {
-        event.preventDefault(); // Prevent form from reloading the page
+        // Handle square footage calculation
+        document.getElementById('calculatorForm').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent form from reloading the page
 
-        const squareFootage = document.getElementById('squareFootage').value;
+            const squareFootage = parseFloat(document.getElementById('squareFootage').value);
+            const severity = document.getElementById('severity').value;
+            const serviceType = document.getElementById('serviceType').value;
 
-        try {
-            const response = await fetch('http://127.0.0.1:5000/calculate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ squareFootage: parseFloat(squareFootage) }),
-            });
+            try {
+                const response = await fetch('http://127.0.0.1:5000/calculate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ squareFootage, severity, serviceType }),
+                });
 
-            const result = await response.json();
-            const responseDiv = document.getElementById('calculatorResponse');
+                const result = await response.json();
+                const responseDiv = document.getElementById('calculatorResponse');
 
-            if (response.ok) {
-                responseDiv.innerHTML = `<p style="color: green;">Estimated Price: ${result.totalPrice}</p>`;
-            } else {
-                responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                if (response.ok) {
+                    responseDiv.innerHTML = `<p style="color: green;">Estimated Price: ${result.totalPrice}<br>Completion Time: ${result.estimatedTime}</p>`;
+                } else {
+                    responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                }
+            } catch (error) {
+                console.error('Error calculating price:', error);
+                document.getElementById('calculatorResponse').innerHTML = `<p style="color: red;">Failed to calculate. Please try again.</p>`;
             }
-        } catch (error) {
-            console.error('Error calculating price:', error);
-            document.getElementById('calculatorResponse').innerHTML = `<p style="color: red;">Failed to calculate. Please try again.</p>`;
-        }
-    });
-</script>
+        });
 
-<footer>
-    <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
-</footer>
+        // Handle appointment scheduling
+        document.getElementById('schedulerForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const appointmentDate = document.getElementById('appointmentDate').value;
+            const appointmentTime = document.getElementById('appointmentTime').value;
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/schedule', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ appointmentDate, appointmentTime }),
+                });
+
+                const result = await response.json();
+                const responseDiv = document.getElementById('schedulerResponse');
+
+                if (response.ok) {
+                    responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
+                } else {
+                    responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                }
+            } catch (error) {
+                console.error('Error scheduling appointment:', error);
+                document.getElementById('schedulerResponse').innerHTML = `<p style="color: red;">Failed to schedule appointment. Please try again.</p>`;
+            }
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
+    </footer>
 
 </body>
+
 </html>
