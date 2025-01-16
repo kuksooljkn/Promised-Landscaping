@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
-    <title>Promised Landscaping | Your Promised Land</title>
+    <title>Promised Landscaping | Book an Appointment</title>
 
     <style>
         /* General Reset */
@@ -98,42 +98,6 @@
             margin: 0 auto;
         }
 
-        /* Pricing Section */
-        #pricing {
-            margin: 30px auto;
-            max-width: 800px;
-            padding: 20px;
-            background: #424242;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        #pricing h2 {
-            text-align: center;
-            color: #81c784;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #666;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background: #333;
-            color: #fff;
-        }
-
         /* Quote Form */
         .quote-form {
             background-color: #424242;
@@ -174,13 +138,6 @@
 
         .quote-form button:hover {
             background-color: #66bb6a;
-        }
-
-        .instant-estimate {
-            font-size: 1.5rem;
-            color: white;
-            margin-top: 15px;
-            text-align: center;
         }
 
         /* Contact Info */
@@ -232,13 +189,12 @@
 
     <header>
         <h1>Promised Landscaping</h1>
-        <p>"Tomorrow isn't promised, but the land sure is."</p>
+        <p>"Tomorrow isn’t promised, but the land sure is."</p>
     </header>
 
     <nav>
         <a href="#about">About Us</a>
         <a href="#services">Our Services</a>
-        <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -254,41 +210,11 @@
 
     <section id="services" class="content">
         <h2>Our Services</h2>
-        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we've got everything you need to enhance your outdoor space.</p>
-    </section>
-
-    <section id="pricing">
-        <h2>Pricing Sheet</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Service</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Weekly Maintenance</td>
-                    <td>Mowing, edging, and blowing.</td>
-                    <td>$50/week</td>
-                </tr>
-                <tr>
-                    <td>Deluxe Package</td>
-                    <td>Mowing, edging, blowing, and trimming.</td>
-                    <td>$75/week</td>
-                </tr>
-                <tr>
-                    <td>Seasonal Cleanup</td>
-                    <td>Mowing, leaf removal, and weeding.</td>
-                    <td>$100/session</td>
-                </tr>
-            </tbody>
-        </table>
+        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we’ve got everything you need to enhance your outdoor space.</p>
     </section>
 
     <section id="quote" class="quote-form">
-        <h2>Instant Quote and Book an Appointment</h2>
+        <h2>Book an Appointment</h2>
         <form id="quoteForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -297,12 +223,10 @@
             <h3>Select a Package</h3>
             <select name="packageType" id="packageType" required>
                 <option value="" disabled selected>Select package type</option>
-                <option value="weekly">Weekly Maintenance</option>
-                <option value="deluxe">Deluxe Package</option>
-                <option value="seasonal">Seasonal Cleanup</option>
+                <option value="Weekly Maintenance">Weekly Maintenance</option>
+                <option value="Deluxe Package">Deluxe Package</option>
+                <option value="Seasonal Cleanup">Seasonal Cleanup</option>
             </select>
-
-            <div id="instantEstimate" class="instant-estimate"></div>
 
             <h3>Appointment Details</h3>
             <input type="date" name="appointmentDate" required>
@@ -320,34 +244,7 @@
     </section>
 
     <script>
-        // Handle square footage calculation instantly
-        const packageTypeSelect = document.getElementById('packageType');
-        const instantEstimateDiv = document.getElementById('instantEstimate');
-
-        async function updateInstantEstimate() {
-            const squareFootage = parseFloat(squareFootageInput.value) || 0;
-            const packageType = packageTypeSelect.value;
-
-                    const result = await response.json();
-
-                    if (response.ok) {
-                        instantEstimateDiv.innerHTML = `Estimated Price: $${result.totalPrice}<br>Completion Time: ${result.estimatedTime}`;
-                    } else {
-                        instantEstimateDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
-                    }
-                } catch (error) {
-                    console.error('Error calculating estimate:', error);
-                    instantEstimateDiv.innerHTML = `<p style="color: red;">Failed to calculate estimate. Please try again.</p>`;
-                }
-            } else {
-                instantEstimateDiv.innerHTML = '';
-            }
-        }
-
-        squareFootageInput.addEventListener('input', updateInstantEstimate);
-        packageTypeSelect.addEventListener('change', updateInstantEstimate);
-
-        // Handle form submission for quote and appointment
+        // Handle form submission for appointment
         document.getElementById('quoteForm').addEventListener('submit', async (event) => {
             event.preventDefault();
 
@@ -367,7 +264,6 @@
                 if (response.ok) {
                     responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
                     event.target.reset();
-                    instantEstimateDiv.innerHTML = '';
                 } else {
                     responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
                 }
