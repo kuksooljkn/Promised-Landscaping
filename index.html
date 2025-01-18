@@ -328,22 +328,28 @@
             const squareFootage = parseFloat(squareFootageInput.value) || 0;
             const packageType = packageTypeSelect.value;
 
-                    const result = await response.json();
+           try {
+        const response = await fetch('https://promisedlandscapingleo.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(jsonData),
+    });
 
-                    if (response.ok) {
-                        instantEstimateDiv.innerHTML = `Estimated Price: $${result.totalPrice}<br>Completion Time: ${result.estimatedTime}`;
-                    } else {
-                        instantEstimateDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
-                    }
-                } catch (error) {
-                    console.error('Error calculating estimate:', error);
-                    instantEstimateDiv.innerHTML = `<p style="color: red;">Failed to calculate estimate. Please try again.</p>`;
-                }
-            } else {
-                instantEstimateDiv.innerHTML = '';
+        const result = await response.json();
+
+        if (response.ok) {
+        instantEstimateDiv.innerHTML = `Estimated Price: $${result.totalPrice}<br>Completion Time: ${result.estimatedTime}`;
+        } else {
+        instantEstimateDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+        }
+    } catch (error) {
+    console.error('Error:', error);
+    instantEstimateDiv.innerHTML = `<p style="color: red;">Failed to calculate estimate. Please try again.</p>`;
+}
+
             }
         }
-
+        
         squareFootageInput.addEventListener('input', updateInstantEstimate);
         packageTypeSelect.addEventListener('change', updateInstantEstimate);
 
