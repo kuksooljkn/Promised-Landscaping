@@ -1,59 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
+    <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
+    <title>Promised Landscaping | Your Promised Land</title>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #f4f4f4;
+            background: linear-gradient(to bottom, #4e342e, #2c2c2c);
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #1e1e1e, #424242);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #81c784;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://github.com/kuksooljkn/Promised-Landscaping/blob/main/micrograss.jpg?raw=true') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .content {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #81c784;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Section */
+        #pricing {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: #424242;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #pricing h2 {
+            text-align: center;
+            color: #81c784;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #666;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #333;
+            color: #fff;
+        }
+
+        /* Quote Form */
+        .quote-form {
+            background-color: #424242;
+            color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #81c784;
+        }
+
+        .quote-form input,
+        .quote-form select,
+        .quote-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .quote-form button {
+            background-color: #81c784;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quote-form button:hover {
+            background-color: #66bb6a;
+        }
+
+        .instant-estimate {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background-color: #424242;
+            color: #fff;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #38ef7d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            color: #ccc;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer p a {
+            color: #81c784;
+            text-decoration: none;
+        }
+
+        footer p a:hover {
+            color: #66bb6a;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Simple Form</h1>
-    <form id="simpleForm">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <header>
+        <h1>Promised Landscaping</h1>
+        <p>"Tomorrow isn't promised, but the land sure is."</p>
+    </header>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" required></textarea><br><br>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <button type="submit">Submit</button>
-    </form>
-    <div id="responseMessage"></div>
+    <section class="hero">
+        <h2>Your Dream Lawn Awaits</h2>
+        <p>From lush landscapes to professional maintenance, we bring your vision to life with faith and dedication.</p>
+    </section>
+
+    <section id="about" class="content">
+        <h2>About Us</h2>
+        <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
+    </section>
+
+    <section id="services" class="content">
+        <h2>Our Services</h2>
+        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we've got everything you need to enhance your outdoor space.</p>
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing Sheet</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Weekly Maintenance</td>
+                    <td>Mowing, edging, and blowing.</td>
+                    <td>$50/week</td>
+                </tr>
+                <tr>
+                    <td>Deluxe Package</td>
+                    <td>Mowing, edging, blowing, and trimming.</td>
+                    <td>$75/week</td>
+                </tr>
+                <tr>
+                    <td>Seasonal Cleanup</td>
+                    <td>Mowing, leaf removal, and weeding.</td>
+                    <td>$100/session</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="quote" class="quote-form">
+        <h2>Instant Quote and Book an Appointment</h2>
+        <form id="quoteForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+            <h3>Select a Package</h3>
+            <select name="packageType" id="packageType" required>
+                <option value="" disabled selected>Select package type</option>
+                <option value="weekly">Weekly Maintenance</option>
+                <option value="deluxe">Deluxe Package</option>
+                <option value="seasonal">Seasonal Cleanup</option>
+            </select>
+
+            <div id="instantEstimate" class="instant-estimate"></div>
+
+            <h3>Appointment Details</h3>
+            <input type="date" name="appointmentDate" required>
+            <input type="time" name="appointmentTime" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="quoteResponse"></div>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
+        <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
+    </section>
 
     <script>
-        // Handle form submission
-        document.getElementById('simpleForm').addEventListener('submit', async (event) => {
+        // Handle square footage calculation instantly
+        const packageTypeSelect = document.getElementById('packageType');
+        const instantEstimateDiv = document.getElementById('instantEstimate');
+
+        async function updateInstantEstimate() {
+            const squareFootage = parseFloat(squareFootageInput.value) || 0;
+            const packageType = packageTypeSelect.value;
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        instantEstimateDiv.innerHTML = `Estimated Price: $${result.totalPrice}<br>Completion Time: ${result.estimatedTime}`;
+                    } else {
+                        instantEstimateDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+                    }
+                } catch (error) {
+                    console.error('Error calculating estimate:', error);
+                    instantEstimateDiv.innerHTML = `<p style="color: red;">Failed to calculate estimate. Please try again.</p>`;
+                }
+            } else {
+                instantEstimateDiv.innerHTML = '';
+            }
+        }
+
+        squareFootageInput.addEventListener('input', updateInstantEstimate);
+        packageTypeSelect.addEventListener('change', updateInstantEstimate);
+
+        // Handle form submission for quote and appointment
+        document.getElementById('quoteForm').addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-            };
+            const formData = new FormData(event.target);
+            const jsonData = Object.fromEntries(formData.entries());
 
             try {
-                // Send form data to Flask backend
-                const response = await fetch('http://localhost:5000/submit', {
+                const response = await fetch('http://5.183.11.92/submit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData),
+                    body: JSON.stringify(jsonData),
                 });
 
                 const result = await response.json();
-                const responseDiv = document.getElementById('responseMessage');
+                const responseDiv = document.getElementById('quoteResponse');
 
                 if (response.ok) {
                     responseDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
+                    event.target.reset();
+                    instantEstimateDiv.innerHTML = '';
                 } else {
                     responseDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
                 }
             } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('responseMessage').innerHTML = `<p style="color: red;">Failed to submit the form. Please try again.</p>`;
+                console.error('Error submitting form:', error);
+                document.getElementById('quoteResponse').innerHTML = `<p style="color: red;">Failed to submit form. Please try again.</p>`;
             }
         });
     </script>
+
+    <footer>
+        <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
+    </footer>
+
 </body>
+
 </html>
