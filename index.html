@@ -288,7 +288,7 @@
     </section>
 
     <section id="quote" class="quote-form">
-        <h2>Instant Quote and Book an Appointment</h2>
+        <h2>Book an Appointment</h2>
         <form id="quoteForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -320,40 +320,8 @@
     </section>
 
     <script>
-        // Handle square footage calculation instantly
-        const packageTypeSelect = document.getElementById('packageType');
-        const instantEstimateDiv = document.getElementById('instantEstimate');
 
-        async function updateInstantEstimate() {
-            const squareFootage = parseFloat(squareFootageInput.value) || 0;
-            const packageType = packageTypeSelect.value;
-
-           try {
-        const response = await fetch('https://promisedlandscapingleo.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(jsonData),
-    });
-
-        const result = await response.json();
-
-        if (response.ok) {
-        instantEstimateDiv.innerHTML = `Estimated Price: $${result.totalPrice}<br>Completion Time: ${result.estimatedTime}`;
-        } else {
-        instantEstimateDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
-        }
-    } catch (error) {
-    console.error('Error:', error);
-    instantEstimateDiv.innerHTML = `<p style="color: red;">Failed to calculate estimate. Please try again.</p>`;
-}
-
-            }
-        }
-        
-        squareFootageInput.addEventListener('input', updateInstantEstimate);
-        packageTypeSelect.addEventListener('change', updateInstantEstimate);
-
-        // Handle form submission for quote and appointment
+  // Handle form submission for quote and appointment
         document.getElementById('quoteForm').addEventListener('submit', async (event) => {
             event.preventDefault();
 
