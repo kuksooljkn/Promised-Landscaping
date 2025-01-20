@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
-    <link rel="icon" type="assets/images/pitchforkme.jpg" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.ico">
     <title>Promised Landscaping | Your Promised Land</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -71,22 +71,100 @@
             color: #81c784;
         }
 
-        /* Hero Section */
-        .hero-content {
+        /* Sections */
+        .content {
+            padding: 70px 20px;
             text-align: center;
-            padding: 100px 20px;
         }
 
-        .hero-content h2 {
-            font-size: 3.5rem;
-            font-weight: bold;
+        .content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
             color: #81c784;
         }
 
-        .hero-content p {
-            font-size: 1.5rem;
-            max-width: 600px;
+        .content p {
+            font-size: 1.2rem;
+            max-width: 700px;
             margin: 0 auto;
+        }
+
+        /* Pricing Section */
+        #pricing {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: #424242;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #pricing h2 {
+            text-align: center;
+            color: #81c784;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #666;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #333;
+            color: #fff;
+        }
+
+        /* Quote Form */
+        .quote-form {
+            background-color: #424242;
+            color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #81c784;
+        }
+
+        .quote-form input,
+        .quote-form select,
+        .quote-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .quote-form button {
+            background-color: #81c784;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quote-form button:hover {
+            background-color: #66bb6a;
         }
 
         /* Footer */
@@ -127,10 +205,58 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Hero Content -->
-    <section class="hero-content">
-        <h2>Your Dream Lawn Awaits</h2>
-        <p>From lush landscapes to professional maintenance, we bring your vision to life with faith and dedication.</p>
+    <!-- About Section -->
+    <section id="about" class="content">
+        <h2>About Us</h2>
+        <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="content">
+        <h2>Our Services</h2>
+        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we've got everything you need to enhance your outdoor space.</p>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2>Pricing Sheet</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Weekly Maintenance</td>
+                    <td>Mowing, edging, and blowing.</td>
+                    <td>$50/week</td>
+                </tr>
+                <tr>
+                    <td>Deluxe Package</td>
+                    <td>Mowing, edging, blowing, and trimming.</td>
+                    <td>$75/week</td>
+                </tr>
+                <tr>
+                    <td>Seasonal Cleanup</td>
+                    <td>Mowing, leaf removal, and weeding.</td>
+                    <td>$100/session</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote" class="quote-form">
+        <h2>Book an Appointment</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <button type="submit">Submit</button>
+        </form>
     </section>
 
     <!-- Footer -->
