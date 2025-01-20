@@ -68,13 +68,13 @@
             color: #81c784;
         }
 
-        /* Section Layout with Images */
+        /* Section Layout */
         .content {
             display: flex;
+            flex-direction: column; /* Stack text and images by default */
             align-items: center;
-            justify-content: center;
             padding: 50px 20px;
-            gap: 20px; /* Space between images and text */
+            gap: 20px; /* Space between text and image */
         }
 
         .text-content {
@@ -94,10 +94,22 @@
         }
 
         .side-image {
-            width: 200px; /* Set image size */
+            width: 300px; /* Set image size */
             height: auto;
             border-radius: 8px; /* Optional: Add rounded corners */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+        }
+
+        /* Responsive Layout for Larger Screens */
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row; /* Place text and images side by side */
+                justify-content: space-between;
+            }
+
+            .text-content {
+                text-align: left;
+            }
         }
 
         /* Footer */
@@ -140,27 +152,24 @@
 
     <!-- About Section -->
     <section id="about" class="content about-section">
-        <img src="assets/images/micrograss.jpg" alt="" class="side-image">
         <div class="text-content">
             <h2>About Us</h2>
             <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
         </div>
-
+        <img src="assets/images/micrograss.jpg" alt="Lush green lawn" class="side-image">
     </section>
 
     <!-- Services Section -->
     <section id="services" class="content services-section">
-
         <div class="text-content">
             <h2>Our Services</h2>
             <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we've got everything you need to enhance your outdoor space.</p>
         </div>
-        <img src="assets/images/midsod3.jpg" alt="" class="side-image">
+        <img src="assets/images/midsod3.jpg" alt="Sod installation in progress" class="side-image">
     </section>
 
     <!-- Pricing Section -->
     <section id="pricing" class="content pricing-section">
-        <img src="assets/images/promised_landscaping.jpg alt="" class="side-image">
         <div class="text-content">
             <h2>Pricing Sheet</h2>
             <table>
@@ -190,18 +199,17 @@
                 </tbody>
             </table>
         </div>
-        
+        <img src="assets/images/promised_landscaping.jpg" alt="Manicured landscape" class="side-image">
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="content contact-section">
-        
         <div class="text-content">
             <h2>Contact Us</h2>
             <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
             <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
         </div>
-        <img src="assets/images/aftermulch.jpg" alt="" class="side-image">
+        <img src="assets/images/aftermulch.jpg" alt="Finished mulch landscaping" class="side-image">
     </section>
 
     <!-- Footer -->
