@@ -67,38 +67,55 @@
         nav a:hover {
             color: #81c784;
         }
+/* Section Layout */
+.content {
+    display: flex;
+    flex-direction: column; /* Stack text and images by default */
+    align-items: center;
+    padding: 50px 20px;
+    gap: 20px; /* Space between text and image */
+}
 
-        /* Section Layout */
-        .content {
-            display: flex;
-            flex-direction: column; /* Stack text and images by default */
-            align-items: center;
-            padding: 50px 20px;
-            gap: 20px; /* Space between text and image */
-        }
+.text-content {
+    max-width: 600px;
+    text-align: center;
+}
 
-        .text-content {
-            max-width: 600px;
-            text-align: center;
-        }
+.text-content h2 {
+    font-size: 2.5rem;
+    color: #81c784;
+    margin-bottom: 15px;
+}
 
-        .text-content h2 {
-            font-size: 2.5rem;
-            color: #81c784;
-            margin-bottom: 15px;
-        }
+.text-content p {
+    font-size: 1.2rem;
+    color: white;
+}
 
-        .text-content p {
-            font-size: 1.2rem;
-            color: white;
-        }
+/* Increased Image Size */
+.side-image {
+    width: 400px; /* Increased width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+}
 
-        .side-image {
-            width: 300px; /* Set image size */
-            height: auto;
-            border-radius: 8px; /* Optional: Add rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
-        }
+/* Responsive Layout for Larger Screens */
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row; /* Place text and images side by side */
+        justify-content: space-between;
+    }
+
+    .text-content {
+        text-align: left;
+    }
+
+    .side-image {
+        width: 500px; /* Larger images for larger screens */
+    }
+}
+
 
         /* Responsive Layout for Larger Screens */
         @media (min-width: 768px) {
