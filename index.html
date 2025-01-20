@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
-    <link rel="icon" type="favicon-16x16" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <link rel="icon" type="favicon-32x32" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="apple-touch-icon" sizes="64x64" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="android-chrome-512x512" sizes="512x512" href="assets/images/android-chrome-512x512.png">
-    <link rel="icon" type="android-chrome-192x192" sizes="192x192" href="assets/images/android-chrome-192x192.png">
-    <link rel="icon" type="android-chrome-512x512" sizes="512x512" href="assets/images/android-chrome-512x512.png">
-
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="64x64" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+    
     <title>Promised Landscaping | Your Promised Land</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -28,31 +29,23 @@
             background: linear-gradient(to bottom, #4e342e, #2c2c2c);
         }
 
-        /* Header with background image */
+        /* Header Section */
         header.hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            text-align: center;
+            padding: 50px 20px;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                         url('assets/images/promised_landscaping.jpg') center/cover no-repeat;
-            color: #fff;
-            text-align: center;
+            color: white;
         }
 
         header.hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            margin-bottom: 10px;
         }
 
         header.hero p {
             font-size: 1.5rem;
             font-style: italic;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-            max-width: 600px;
         }
 
         /* Navigation */
@@ -75,47 +68,36 @@
             color: #81c784;
         }
 
-        /* Section Background Images */
-        .about-section {
-            background: url('assets/images/promised_landscaping.jpg') center/cover no-repeat;
-            padding: 70px 20px;
-            color: #fff;
+        /* Section Layout with Images */
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 20px; /* Space between images and text */
+        }
+
+        .text-content {
+            max-width: 600px;
             text-align: center;
         }
 
-        .services-section {
-            background: url('assets/images/micrograss.jpg') center/cover no-repeat;
-            padding: 70px 20px;
-            color: #fff;
-            text-align: center;
-        }
-
-        .pricing-section {
-            background: url('assets/images/midsod3.jpg') center/cover no-repeat;
-            padding: 70px 20px;
-            color: #fff;
-            text-align: center;
-        }
-
-        .contact-section {
-            background: url('assets/images/aftermulch.jpg') center/cover no-repeat;
-            padding: 70px 20px;
-            color: #fff;
-            text-align: center;
-        }
-
-        /* Section Headings */
-        .content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
+        .text-content h2 {
+            font-size: 2.5rem;
             color: #81c784;
+            margin-bottom: 15px;
         }
 
-        .content p {
+        .text-content p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #fff;
+            color: white;
+        }
+
+        .side-image {
+            width: 200px; /* Set image size */
+            height: auto;
+            border-radius: 8px; /* Optional: Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
         }
 
         /* Footer */
@@ -158,52 +140,68 @@
 
     <!-- About Section -->
     <section id="about" class="content about-section">
-        <h2>About Us</h2>
-        <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
+        <img src="assets/images/about_us.jpg" alt="About Us Image" class="side-image">
+        <div class="text-content">
+            <h2>About Us</h2>
+            <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. We dedicate our expertise to creating outdoor spaces that feel like your personal haven.</p>
+        </div>
+        <img src="assets/images/about_us.jpg" alt="About Us Image" class="side-image">
     </section>
 
     <!-- Services Section -->
     <section id="services" class="content services-section">
-        <h2>Our Services</h2>
-        <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we've got everything you need to enhance your outdoor space.</p>
+        <img src="assets/images/services.jpg" alt="Our Services Image" class="side-image">
+        <div class="text-content">
+            <h2>Our Services</h2>
+            <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, we've got everything you need to enhance your outdoor space.</p>
+        </div>
+        <img src="assets/images/services.jpg" alt="Our Services Image" class="side-image">
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
-        <h2>Pricing Sheet</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Service</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Weekly Maintenance</td>
-                    <td>Mowing, edging, and blowing.</td>
-                    <td>$50/week</td>
-                </tr>
-                <tr>
-                    <td>Deluxe Package</td>
-                    <td>Mowing, edging, blowing, and trimming.</td>
-                    <td>$75/week</td>
-                </tr>
-                <tr>
-                    <td>Seasonal Cleanup</td>
-                    <td>Mowing, leaf removal, and weeding.</td>
-                    <td>$100/session</td>
-                </tr>
-            </tbody>
-        </table>
+    <section id="pricing" class="content pricing-section">
+        <img src="assets/images/pricing.jpg" alt="Pricing Image" class="side-image">
+        <div class="text-content">
+            <h2>Pricing Sheet</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Weekly Maintenance</td>
+                        <td>Mowing, edging, and blowing.</td>
+                        <td>$50/week</td>
+                    </tr>
+                    <tr>
+                        <td>Deluxe Package</td>
+                        <td>Mowing, edging, blowing, and trimming.</td>
+                        <td>$75/week</td>
+                    </tr>
+                    <tr>
+                        <td>Seasonal Cleanup</td>
+                        <td>Mowing, leaf removal, and weeding.</td>
+                        <td>$100/session</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <img src="assets/images/pricing.jpg" alt="Pricing Image" class="side-image">
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
-        <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
+    <section id="contact" class="content contact-section">
+        <img src="assets/images/contact_us.jpg" alt="Contact Us Image" class="side-image">
+        <div class="text-content">
+            <h2>Contact Us</h2>
+            <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
+            <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
+        </div>
+        <img src="assets/images/contact_us.jpg" alt="Contact Us Image" class="side-image">
     </section>
 
     <!-- Footer -->
