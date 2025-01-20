@@ -67,29 +67,60 @@
         nav a:hover {
             color: #81c784;
         }
+
 /* Section Layout */
 .content {
     display: flex;
     flex-direction: column; /* Stack text and images by default */
     align-items: center;
-    padding: 50px 20px;
-    gap: 20px; /* Space between text and image */
+    padding: 50px 20px; /* Adjust padding to reduce extra gaps */
+    gap: 30px; /* Slightly larger gap between text and images */
 }
 
 .text-content {
-    max-width: 600px;
+    max-width: 700px; /* Increase max-width for text */
     text-align: center;
 }
 
 .text-content h2 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Increase heading size */
     color: #81c784;
     margin-bottom: 15px;
 }
 
 .text-content p {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Increase paragraph font size */
     color: white;
+    line-height: 1.8; /* Add better spacing between lines */
+}
+
+/* Increased Image Size */
+.side-image {
+    width: 500px; /* Larger width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+}
+
+/* Responsive Layout for Larger Screens */
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row; /* Place text and images side by side */
+        justify-content: space-between;
+    }
+
+    .text-content {
+        text-align: left;
+    }
+
+    .side-image {
+        width: 600px; /* Increase image size for larger screens */
+    }
+}
+
+/* Section Spacing */
+section {
+    padding: 70px 0; /* Add consistent spacing between sections */
 }
 
 /* Contact Section - Consistent Green Style */
