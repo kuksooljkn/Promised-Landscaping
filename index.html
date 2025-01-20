@@ -139,6 +139,48 @@ section {
     font-size: 1.2rem; /* Optional: Adjust font size for readability */
 }
 
+/* Pricing Section Styles */
+.pricing-section table {
+    width: 100%; /* Make the table take the full width of its container */
+    max-width: 800px; /* Limit the table width */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse; /* Remove default spacing between table cells */
+    background-color: #424242; /* Table background color */
+    color: white;
+    border: 1px solid #666; /* Border around the table */
+}
+
+.pricing-section th, 
+.pricing-section td {
+    text-align: left; /* Align text to the left */
+    padding: 15px; /* Add space inside cells */
+    font-size: 1.5rem; /* Increase text size */
+    border: 1px solid #666; /* Border between rows and columns */
+}
+
+.pricing-section th {
+    background-color: #333; /* Darker background for headers */
+    color: #fff; /* White text for headers */
+    font-weight: bold;
+    text-transform: uppercase; /* Make headers uppercase */
+}
+
+.pricing-section tr:nth-child(even) {
+    background-color: #505050; /* Alternate row background for better readability */
+}
+
+.pricing-section tr:hover {
+    background-color: #66bb6a; /* Highlight row on hover */
+    color: black; /* Change text color on hover */
+}
+
+/* Table Caption */
+.pricing-section table caption {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #81c784; /* Match other greens */
+}
 
         
 /* Increased Image Size */
@@ -240,7 +282,6 @@ section {
     <!-- Pricing Section -->
     <section id="pricing" class="content pricing-section">
         <img src="assets/images/aftermulch.jpg" alt="Finished mulch landscaping" class="side-image">
-        
         <div class="text-content">
             <h2>Pricing Sheet</h2>
             <table>
@@ -266,6 +307,11 @@ section {
                         <td>Seasonal Cleanup</td>
                         <td>Mowing, leaf removal, and weeding.</td>
                         <td>$100/session</td>
+                    </tr>
+                    <tr>
+                        <td>Specialty Landscaping Services</td>
+                        <td>Sod installation, mulch installation, flowerbed renovation, and/or debris removal.</td>
+                        <td>$150 minimum + case-by-case basis pricing</td>
                     </tr>
                 </tbody>
             </table>
