@@ -1,335 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
-    
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="64x64" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
-    
-    <title>Promised Landscaping | Your Promised Land</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #f4f4f4;
-            background: linear-gradient(to bottom, #4e342e, #2c2c2c);
-        }
+  <!-- Favicon and Icons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="64x64" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
 
-        /* Header Section */
-        header.hero {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('assets/images/micrograss.jpg') center/cover no-repeat;
-            color: white;
-        }
+  <title>Promised Landscaping | Your Promised Land</title>
+  <link rel="stylesheet" href="styles.css">
 
-        header.hero h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-        }
+  <style>
+    /* ---------- Base Reset ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        header.hero p {
-            font-size: 1.5rem;
-            font-style: italic;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #f4f4f4;
+      background: linear-gradient(to bottom, #4e342e, #2c2c2c);
+    }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 10px 0;
-        }
+    /* ---------- Header ---------- */
+    header.hero {
+      text-align: center;
+      padding: 50px 20px;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)),
+        url('assets/images/micrograss.jpg') center/cover no-repeat;
+      color: #fff;
+    }
+    header.hero h1 { font-size: 3.5rem; font-weight: 700; }
+    header.hero p { font-size: 1.5rem; font-style: italic; }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
+    /* ---------- Nav ---------- */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 10px 0;
+      gap: 15px;
+    }
+    nav a {
+      color: #fff; text-decoration: none;
+      font-size: 1.1rem; font-weight: 700;
+    }
+    nav a:hover { color: #81c784; }
 
-        nav a:hover {
-            color: #81c784;
-        }
+    /* ---------- Sections & Layout ---------- */
+    section { padding: 70px 0; }
 
-/* Section Layout */
-.content {
-    display: flex;
-    flex-direction: column; /* Stack text and images by default */
-    align-items: center;
-    padding: 50px 20px; /* Adjust padding to reduce extra gaps */
-    gap: 30px; /* Slightly larger gap between text and images */
-}
-
-.text-content {
-    max-width: 700px; /* Increase max-width for text */
-    text-align: center;
-}
-
-.text-content h2 {
-    font-size: 3rem; /* Increase heading size */
-    color: #81c784;
-    margin-bottom: 15px;
-}
-
-.text-content p {
-    font-size: 1.5rem; /* Increase paragraph font size */
-    color: white;
-    line-height: 1.8; /* Add better spacing between lines */
-}
-
-/* Increased Image Size */
-.side-image {
-    width: 500px; /* Larger width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
-}
-
-/* Responsive Layout for Larger Screens */
-@media (min-width: 768px) {
     .content {
-        flex-direction: row; /* Place text and images side by side */
-        justify-content: space-between;
+      display: flex;
+      flex-direction: column;          /* mobile-first stack */
+      align-items: center;
+      padding: 50px 20px;
+      gap: 30px;
     }
 
     .text-content {
-        text-align: left;
+      max-width: 700px;
+      text-align: center;
+    }
+    .text-content h2 {
+      font-size: 3rem;
+      color: #81c784;
+      margin-bottom: 15px;
+    }
+    .text-content p {
+      font-size: 1.5rem;
+      color: #fff;
+      line-height: 1.8;
     }
 
+    /* ---------- Images ---------- */
     .side-image {
-        width: 600px; /* Increase image size for larger screens */
-    }
-}
-
-/* Section Spacing */
-section {
-    padding: 70px 0; /* Add consistent spacing between sections */
-}
-
-/* Contact Section - Consistent Green Style */
-.contact-section a {
-    color: #81c784; /* Matching green from your design */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-section a:hover {
-    color: #66bb6a; /* Slightly darker green for hover effect */
-}
-
-.contact-section p {
-    color: #81c784; /* Same green for paragraph text */
-    font-size: 1.2rem; /* Optional: Adjust font size for readability */
-}
-
-/* Pricing Section Styles */
-.pricing-section table {
-    width: 100%; /* Make the table take the full width of its container */
-    max-width: 800px; /* Limit the table width */
-    margin: 0 auto; /* Center the table */
-    border-collapse: collapse; /* Remove default spacing between table cells */
-    background-color: #424242; /* Table background color */
-    color: white;
-    border: 1px solid #666; /* Border around the table */
-}
-
-.pricing-section th, 
-.pricing-section td {
-    text-align: left; /* Align text to the left */
-    padding: 8px; /* Further reduced padding */
-    font-size: 1.1rem; /* Slightly smaller text size */
-    border: 1px solid #666; /* Border between rows and columns */
-}
-
-.pricing-section th {
-    background-color: #333; /* Darker background for headers */
-    color: #fff; /* White text for headers */
-    font-weight: bold;
-    text-transform: uppercase; /* Make headers uppercase */
-}
-
-.pricing-section tr:nth-child(even) {
-    background-color: #505050; /* Alternate row background for better readability */
-}
-
-.pricing-section tr:hover {
-    background-color: #66bb6a; /* Highlight row on hover */
-    color: black; /* Change text color on hover */
-}
-
-/* Table Caption */
-.pricing-section table caption {
-    font-size: 1.3rem; /* Further reduced caption font size */
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #81c784; /* Match other greens */
-}
-
-/* Increased Image Size */
-.side-image {
-    width: 400px; /* Increased width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
-}
-
-/* Responsive Layout for Larger Screens */
-@media (min-width: 768px) {
-    .content {
-        flex-direction: row; /* Place text and images side by side */
-        justify-content: space-between;
+      width: 500px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,.3);
     }
 
-    .text-content {
-        text-align: left;
+    /* ---------- Contact ---------- */
+    .contact-section a {
+      color: #81c784;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact-section a:hover { color: #66bb6a; }
+    .contact-section p {
+      color: #81c784;
+      font-size: 1.2rem;
     }
 
-    .side-image {
-        width: 500px; /* Larger images for larger screens */
+    /* ---------- Pricing ---------- */
+    .pricing-section table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #424242;
+      color: #fff;
+      border: 1px solid #666;
     }
-}
+    .pricing-section th, .pricing-section td {
+      text-align: left;
+      padding: 8px;
+      font-size: 1.1rem;
+      border: 1px solid #666;
+    }
+    .pricing-section th {
+      background-color: #333;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .pricing-section tr:nth-child(even) { background-color: #505050; }
+    .pricing-section tr:hover { background-color: #66bb6a; color: #000; }
+    .pricing-section table caption {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: #81c784;
+    }
 
+    /* ---------- Reviews ---------- */
+    .reviews-section .btn {
+      display: inline-block;
+      background: #81c784;
+      color: #000;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      transition: transform .05s ease, background .2s ease;
+    }
+    .reviews-section .btn:hover { background: #66bb6a; transform: translateY(-1px); }
 
-        /* Responsive Layout for Larger Screens */
-        @media (min-width: 768px) {
-            .content {
-                flex-direction: row; /* Place text and images side by side */
-                justify-content: space-between;
-            }
+    .map-embed {
+      width: 500px;
+      height: 350px;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    }
 
-            .text-content {
-                text-align: left;
-            }
-        }
+    /* ---------- Footer ---------- */
+    footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+      text-align: center;
+      padding: 15px 0;
+    }
+    footer p { font-size: .9rem; }
+    footer p a { color: #81c784; text-decoration: none; }
+    footer p a:hover { color: #66bb6a; }
 
-        /* Footer */
-        footer {
-            background-color: #1e1e1e;
-            color: #ccc;
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        footer p a {
-            color: #81c784;
-            text-decoration: none;
-        }
-
-        footer p a:hover {
-            color: #66bb6a;
-        }
-    </style>
+    /* ---------- Desktop Tweaks (merged) ---------- */
+    @media (min-width: 768px) {
+      .content { flex-direction: row; justify-content: space-between; }
+      .text-content { text-align: left; }
+      .side-image { width: 600px; }
+      .map-embed { width: 600px; height: 400px; }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header class="hero">
-        <h1>Promised Landscaping</h1>
-        <p>"Tomorrow isn't promised, but the land sure is."</p>
-    </header>
+  <!-- Header -->
+  <header class="hero">
+    <h1>Promised Landscaping</h1>
+    <p>"Tomorrow isn't promised, but the land sure is."</p>
+  </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about" class="content about-section">
-        
-        <img src="assets/images/pitchforkme.jpg" alt="Me with a pitchfork" class="side-image">
-        
-        <div class="text-content">
-            <h2>About</h2>
-            <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. I dedicate my expertise to creating outdoor spaces that feel like your personal haven.</p>
-        </div>
-        
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="content services-section">
-        <div class="text-content">
-            <h2>Services</h2>
-            <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, I've got everything you need to enhance your outdoor space.</p>
-        </div>
-        <img src="assets/images/midsod3.jpg" alt="Sod installation in progress" class="side-image">
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="content pricing-section">
-        <img src="assets/images/aftermulch.jpg" alt="Finished mulch landscaping" class="side-image">
-        <div class="text-content">
-            <h2>Pricing Sheet</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Weekly/Bi-Weekly Maintenance</td>
-                        <td>Mowing, edging, and blowing.</td>
-                        <td>$50 per cut</td>
-                    </tr>
-                    <tr>
-                        <td>Deluxe Package</td>
-                        <td>Mowing, edging, blowing, and trimming.</td>
-                        <td>$75 per cut</td>
-                    </tr>
-                    <tr>
-                        <td>Seasonal Cleanup</td>
-                        <td>Mowing, leaf removal, and weeding.</td>
-                        <td>$100/session</td>
-                    </tr>
-                    <tr>
-                        <td>Specialty Landscaping Services</td>
-                        <td>Sod installation, mulch installation, flowerbed renovation, and/or debris removal.</td>
-                        <td>$150 minimum + case-by-case basis pricing</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-<section id="contact" class="content contact-section">
+  <!-- About -->
+  <section id="about" class="content about-section">
+    <img src="assets/images/pitchforkme.jpg" alt="Me with a pitchfork" class="side-image" loading="lazy" decoding="async">
     <div class="text-content">
-        <h2>Contact</h2>
-        <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
-        <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
+      <h2>About</h2>
+      <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. I dedicate my expertise to creating outdoor spaces that feel like your personal haven.</p>
     </div>
-          <img src="assets/images/plogo.JPG" alt="Manicured landscape" class="side-image">
-    </section>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
-    </footer>
+  <!-- Services -->
+  <section id="services" class="content services-section">
+    <div class="text-content">
+      <h2>Services</h2>
+      <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, I've got everything you need to enhance your outdoor space.</p>
+    </div>
+    <img src="assets/images/midsod3.jpg" alt="Sod installation in progress" class="side-image" loading="lazy" decoding="async">
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="content pricing-section">
+    <img src="assets/images/aftermulch.jpg" alt="Finished mulch landscaping" class="side-image" loading="lazy" decoding="async">
+    <div class="text-content">
+      <h2>Pricing Sheet</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Weekly/Bi-Weekly Maintenance</td>
+            <td>Mowing, edging, and blowing.</td>
+            <td>$50 per cut</td>
+          </tr>
+          <tr>
+            <td>Deluxe Package</td>
+            <td>Mowing, edging, blowing, and trimming.</td>
+            <td>$75 per cut</td>
+          </tr>
+          <tr>
+            <td>Seasonal Cleanup</td>
+            <td>Mowing, leaf removal, and weeding.</td>
+            <td>$100/session</td>
+          </tr>
+          <tr>
+            <td>Specialty Landscaping Services</td>
+            <td>Sod installation, mulch installation, flowerbed renovation, and/or debris removal.</td>
+            <td>$150 minimum + case-by-case basis pricing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="content reviews-section">
+    <div class="text-content">
+      <h2>Reviews</h2>
+      <p>We’d love your feedback! Share your experience below.</p>
+
+      <!-- Google Business Profile -->
+      <p style="margin-top:12px;">
+        <a class="btn" href="https://g.page/r/CZAuNVnfW6q3EBM" target="_blank" rel="noopener noreferrer" aria-label="Open our Google Business Profile">
+          View our Google profile
+        </a>
+      </p>
+
+      <!-- Direct "Write a review" -->
+      <p style="margin-top:8px;">
+        <a class="btn" href="https://g.page/r/CZAuNVnfW6q3EBM/review" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for Promised Landscaping">
+          Leave a Google review
+        </a>
+      </p>
+    </div><!-- closes .text-content -->
+
+    <!-- Map card (uses your Place ID) -->
+    <iframe
+      class="map-embed"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=place_id:ChIJs9V_cK4rRIYR0VvVj_FzVjA&output=embed"
+      title="Promised Landscaping on Google Maps">
+    </iframe>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="content contact-section">
+    <div class="text-content">
+      <h2>Contact</h2>
+      <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
+      <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
+    </div>
+    <img src="assets/images/plogo.JPG" alt="Promised Landscaping logo" class="side-image" loading="lazy" decoding="async">
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
+  </footer>
 </body>
 </html>
