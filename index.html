@@ -1,444 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Promised Landscaping: Transforming lawns into works of art in Houston, Texas. Contact us for premium lawn care services.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Promised Landscaping LLC offers lawn mowing, cleanups, junk removal, sod, mulch, and flowerbed renovation services in the Houston area." />
+  <title>Promised Landscaping | Houston Lawn Care & Landscaping</title>
 
-  <!-- Favicons use your new logo (cache-busted) -->
-  <link rel="icon" href="assets/images/OfficialPLogo.png?v=3" type="image/png">
-  <link rel="apple-touch-icon" href="assets/images/OfficialPLogo.png?v=3">
-
-  <title>Promised Landscaping | Your Promised Land</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/images/OfficialPLogo.png?v=4" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/images/OfficialPLogo.png?v=4" />
 
   <style>
-    /* ---------- Base Reset ---------- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green: #7cc957;
+      --green-dark: #4f9d3a;
+      --brown: #5a3a26;
+      --cream: #f7f1e7;
+      --ink: #172018;
+      --muted: #657162;
+      --card: #ffffff;
+      --shadow: 0 18px 50px rgba(20, 31, 20, 0.18);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
       line-height: 1.6;
-      color: #f4f4f4;
-      background: linear-gradient(to bottom, #4e342e, #2c2c2c);
     }
 
-    /* ---------- Header ---------- */
-    header.hero {
-      text-align: center;
-      padding: 50px 20px;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)),
-        url('assets/images/micrograss.jpg') center/cover no-repeat;
-      color: #fff;
-    }
-    header.hero h1 { font-size: 3.5rem; font-weight: 700; }
-    header.hero p { font-size: 1.5rem; font-style: italic; }
+    img { max-width: 100%; display: block; }
 
-    /* ---------- Nav ---------- */
+    a { color: inherit; }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(23, 32, 24, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      font-size: 1.1rem;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 14px;
+    }
+
     nav {
       display: flex;
-      justify-content: center;
-      background-color: #333;
-      padding: 14px 0;          /* breathing room */
-      gap: 40px;                /* space between links */
-    }
-    nav a {
-      color: #fff; text-decoration: none;
-      font-size: 1.2rem; font-weight: 700;
-      padding: 8px 12px;
-      transition: color .2s ease;
-    }
-    nav a:hover { color: #81c784; text-decoration: underline; }
-
-    /* ---------- Sections & Layout ---------- */
-    section { padding: 100px 0; }  /* more vertical spacing */
-
-    .content {
-      display: flex;
-      flex-direction: column;      /* mobile-first stack */
+      gap: 22px;
       align-items: center;
-      padding: 50px 20px;
-      gap: 30px;
+      font-weight: 800;
+      color: #314031;
     }
 
-    .text-content { max-width: 760px; text-align: center; }
-    .text-content h2 { font-size: 3rem; color: #81c784; margin-bottom: 15px; }
-    .text-content p { font-size: 1.5rem; color: #fff; line-height: 1.8; }
-
-    /* ---------- Images ---------- */
-    .side-image {
-      width: 500px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.3);
-    }
-
-    /* ---------- Buttons ---------- */
-    .btn, .btn-quote {
-      display: inline-block;
-      background: #81c784;
-      color: #000;
+    nav a {
       text-decoration: none;
-      font-weight: 700;
-      padding: 10px 14px;
-      border-radius: 8px;
-      transition: transform .05s ease, background .2s ease;
+      font-size: 0.95rem;
     }
-    .btn:hover, .btn-quote:hover { background: #66bb6a; transform: translateY(-1px); }
 
-    /* ---------- Video (embed) ---------- */
+    nav a:hover { color: var(--green-dark); }
+
+    .nav-cta {
+      background: var(--ink);
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(12, 18, 12, 0.88), rgba(12, 18, 12, 0.42)),
+        url('assets/images/micrograss.jpg') center/cover no-repeat;
+    }
+
+    .hero .container {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 48px;
+      padding: 86px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(124, 201, 87, 0.18);
+      border: 1px solid rgba(124, 201, 87, 0.45);
+      color: #dff8d5;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions,
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 2px solid transparent;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary { background: var(--green); color: #10200d; }
+    .btn-primary:hover { background: #8ee06a; }
+
+    .btn-secondary {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-dark { background: var(--ink); color: #fff; }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+      max-width: 680px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .stat b { display: block; font-size: 1.4rem; color: #fff; }
+    .stat span { color: rgba(255, 255, 255, 0.78); font-size: 0.9rem; }
+
+    section { padding: 92px 0; }
+
+    .section-head {
+      max-width: 740px;
+      margin-bottom: 36px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .kicker {
+      color: var(--green-dark);
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin-bottom: 16px;
+    }
+
+    .section-head p,
+    .split p,
+    .card p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .photo-stack {
+      position: relative;
+    }
+
+    .photo-stack .main-photo {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .badge-card {
+      position: absolute;
+      right: -16px;
+      bottom: -22px;
+      width: min(275px, 70%);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(23, 32, 24, 0.08);
+    }
+
+    .badge-card b { display: block; margin-bottom: 4px; }
+    .badge-card span { color: var(--muted); font-size: 0.92rem; }
+
+    .services-grid,
+    .pricing-grid,
+    .photo-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .services-grid { grid-template-columns: repeat(4, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .photo-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 32px rgba(20, 31, 20, 0.08);
+      border: 1px solid rgba(23, 32, 24, 0.08);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #e7f6df;
+      color: var(--green-dark);
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .video-section {
+      background: #10200d;
+      color: #fff;
+    }
+
+    .video-section .section-head p { color: rgba(255, 255, 255, 0.72); }
+
     .video-wrap {
       width: 100%;
-      max-width: 760px;
-      aspect-ratio: 16/9;
-      border-radius: 12px;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,.35);
-      margin-top: 12px;
+      box-shadow: var(--shadow);
+      background: #000;
     }
+
     .video-wrap iframe { width: 100%; height: 100%; border: 0; }
 
-    /* ---------- Pricing (Card Layout) ---------- */
-    .price-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 10px;
-    }
     .price-card {
-      background: #424242;
-      border: 1px solid #666;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.25);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    .price-card.highlight { border-color: #81c784; box-shadow: 0 6px 12px rgba(0,0,0,.35); }
-    .price-card h3 { margin-bottom: 6px; color: #81c784; font-size: 1.35rem; }
-    .price-card .price { font-size: 1.35rem; font-weight: 800; margin: 10px 0; color: #fff; }
 
-    .included { list-style: none; margin: 0 0 12px 0; padding: 0; }
-    .included li { padding-left: 18px; position: relative; margin: 6px 0; color: #eee; }
-    .included li::before { content: "•"; position: absolute; left: 0; color: #81c784; }
+    .price-card.featured {
+      border: 2px solid var(--green);
+    }
 
-    .fine-print { color: #bbb; font-size: .95rem; margin-top: 10px; }
+    .price {
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+    }
 
-    /* Lot chips */
-    .chip-group { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 4px; }
+    .included { list-style: none; display: grid; gap: 8px; }
+    .included li::before { content: '✓'; color: var(--green-dark); font-weight: 900; margin-right: 8px; }
+
+    .chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip {
-      border: 1px solid #666;
-      background: transparent;
-      color: #fff;
+      border: 1px solid rgba(23, 32, 24, 0.18);
+      background: #f7f7f2;
+      color: var(--ink);
       font: inherit;
-      padding: 6px 10px;
+      font-weight: 800;
+      padding: 8px 11px;
       border-radius: 999px;
       cursor: pointer;
-      transition: background .2s ease, color .2s ease, transform .05s ease;
     }
-    .chip:hover { transform: translateY(-1px); }
-    .chip.selected { background: #81c784; color: #000; border-color: #81c784; }
+    .chip.selected { background: var(--ink); color: #fff; border-color: var(--ink); }
 
-    /* Mowing add-ons */
-    .addons {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 6px;
-      margin: 10px 0 8px;
+    .addons { display: grid; gap: 6px; }
+    .addons label { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+    .addons input { accent-color: var(--green-dark); }
+
+    .fine-print { color: var(--muted); font-size: 0.9rem; }
+
+    .reviews {
+      background:
+        linear-gradient(rgba(247, 241, 231, 0.94), rgba(247, 241, 231, 0.94)),
+        url('assets/images/aftermulch.jpg') center/cover no-repeat;
     }
-    .addons label { display: flex; align-items: center; gap: 8px; font-size: 0.98rem; color: #eee; }
-    .addons input[type="checkbox"] { transform: scale(1.15); accent-color: #81c784; }
-    .est-note { color:#bbb; font-size:.9rem; margin-left:4px; }
 
-    /* ---------- Thumbtack widget theming ---------- */
-    .thumbtack-widget-wrap { width: 100%; max-width: 700px; margin-top: 16px; }
-    #tt-review-widget-one {
-      background: #424242;
-      border: 1px solid #666;
-      border-radius: 12px;
-      padding: 14px;
+    .review-card {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stars { color: #f5a623; font-size: 1.4rem; letter-spacing: 0.08em; margin-bottom: 12px; }
+
+    .photo-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .photo-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .photo-card div { padding: 18px; }
+
+    .contact {
+      background: var(--ink);
       color: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,.25);
     }
-    #tt-review-widget-one img { max-width: 100%; height: auto; }
-    #tt-review-widget-one .tt-right p { color: #eee; }
-    #tt-review-widget-one a { color: #81c784; font-weight: 700; text-decoration: none; }
-    #tt-review-widget-one a:hover { color: #66bb6a; text-decoration: underline; }
 
-    /* ---------- Contact ---------- */
-    .contact-section a { color: #81c784; text-decoration: none; font-weight: 700; }
-    .contact-section a:hover { color: #66bb6a; }
-    .contact-section p { color: #81c784; font-size: 1.6rem; line-height: 2.0; }
+    .contact .section-head p { color: rgba(255, 255, 255, 0.72); }
 
-    /* ---------- Footer ---------- */
-    footer { background-color: #1e1e1e; color: #ccc; text-align: center; padding: 15px 0; }
-    footer p { font-size: .9rem; }
-    footer p a { color: #81c784; text-decoration: none; }
-    footer p a:hover { color: #66bb6a; }
-
-    /* ---------- Desktop Tweaks ---------- */
-    @media (min-width: 768px) {
-      .content { flex-direction: row; justify-content: space-between; }
-      .text-content { text-align: left; }
-      .side-image { width: 600px; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
     }
-    @media (min-width: 900px) {
-      .price-grid { grid-template-columns: 1fr 1fr; } /* 2 columns on desktop */
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .contact-card a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      padding: 24px 0;
+      background: #0b120b;
+      color: rgba(255, 255, 255, 0.62);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      nav { display: none; }
+      .hero .container,
+      .split,
+      .contact-grid { grid-template-columns: 1fr; }
+      .services-grid,
+      .pricing-grid,
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero .container { min-height: auto; }
+      .hero-card { max-width: 560px; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1120px); }
+      section { padding: 68px 0; }
+      .stats,
+      .services-grid,
+      .pricing-grid,
+      .photo-grid { grid-template-columns: 1fr; }
+      .hero-actions .btn,
+      .button-row .btn { width: 100%; }
+      .badge-card { position: static; width: 100%; margin-top: 14px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="hero">
-    <h1>Promised Landscaping</h1>
-    <p>"Tomorrow isn't promised, but the land sure is."</p>
+  <header class="topbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Promised Landscaping home">
+        <img src="assets/images/OfficialPLogo.png" alt="Promised Landscaping logo" />
+        <span>Promised Landscaping</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#work">Photos</a>
+        <a href="#reviews">Reviews</a>
+        <a class="nav-cta" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20quote.%20My%20address%20is%20...%20Photos%20attached.">Text for Quote</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- About -->
-  <section id="about" class="content about-section">
-    <img src="assets/images/pitchforkme.jpg" alt="Me with a pitchfork" class="side-image" loading="lazy" decoding="async">
-    <div class="text-content">
-      <h2>About</h2>
-      <p>Promised Landscaping is inspired by the idea of the "Promised Land"—a place of beauty, abundance, and fulfillment. I dedicate my expertise to creating outdoor spaces that feel like your personal haven.</p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="content services-section">
-    <div class="text-content">
-      <h2>Services</h2>
-      <p>From lawn maintenance and yard cleanups to sod installation and mulch laying, I've got everything you need to enhance your outdoor space.</p>
-
-      <!-- YouTube: channel button + subscribe -->
-      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:10px;">
-        <a class="btn" href="https://www.youtube.com/@PromisedLandscaping"
-           target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel">
-          Visit our YouTube channel
-        </a>
-
-        <!-- YouTube Subscribe button (uses your Channel ID) -->
-        <div class="g-ytsubscribe"
-             data-channelid="UCqbhKoAe8uD-k2_-z452ZZw"
-             data-layout="default"
-             data-theme="dark"
-             data-count="default"></div>
-      </div>
-
-      <!-- Embedded video -->
-      <div class="video-wrap" aria-label="Relaxing Huge Front Corner Yard Lawn Cut – The Woodlands, Texas video">
-        <iframe
-          src="https://www.youtube.com/embed/BrLZETsxRhA"
-          title="Relaxing Huge Front Corner Yard Lawn Cut – The Woodlands, Texas"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-    <img src="assets/images/midsod3.jpg" alt="Sod installation in progress" class="side-image" loading="lazy" decoding="async">
-  </section>
-
-  <!-- Pricing (modern cards) -->
-  <section id="pricing" class="content pricing-section">
-    <img src="assets/images/aftermulch.jpg" alt="Finished mulch landscaping" class="side-image" loading="lazy" decoding="async">
-
-    <div class="text-content">
-      <h2>Pricing & Estimates</h2>
-      <p style="margin-bottom:18px;">Clear starting prices. Final quote after a quick text or call—based on lot size, access, obstacles, and growth.</p>
-
-      <div class="price-grid">
-        <!-- Mowing -->
-        <article class="price-card highlight">
-          <h3>Mowing (Stand-on mower)</h3>
-
-          <!-- Lot type chips (pick one) -->
-          <div class="chip-group mow-size" aria-label="Select lot type">
-            <button class="chip selected" data-key="small">Small ≤ 4k sq ft — $50</button>
-            <button class="chip" data-key="medium">Mixed yard (small front / big back) — $65</button>
-            <button class="chip" data-key="corner">Corner lot — $80</button>
-            <button class="chip" data-key="huge">Huge / long ditch — $200</button>
+  <main id="top">
+    <section class="hero" aria-label="Promised Landscaping hero section">
+      <div class="container">
+        <div>
+          <div class="eyebrow">Houston Area Lawn Care & Landscaping</div>
+          <h1>Your yard, promised.</h1>
+          <p>Reliable mowing, cleanups, mulch, sod, and landscaping projects that make your outdoor space look clean, sharp, and cared for.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20quote.%20My%20address%20is%20...%20Photos%20attached.">Text Photos for Fast Quote</a>
+            <a class="btn btn-secondary" href="tel:2817575012">Call 281-757-5012</a>
           </div>
-
-          <!-- Optional add-ons (no bagging) -->
-          <div class="addons" aria-label="Optional add-ons">
-            <label><input type="checkbox" class="mow-addon" data-key="overgrowth"> Overgrowth +$20</label>
-            <label><input type="checkbox" class="mow-addon" data-key="edge"> Heavy edge refresh +$15</label>
-          </div>
-
-          <!-- Live estimate -->
-          <div class="price"><span id="mowPrice">$50+</span> <small class="est-note">est.</small></div>
-
-          <ul class="included">
-            <li>Stand-on mower cut</li>
-            <li>Weedeater edging</li>
-            <li>Leaf blower cleanup</li>
-          </ul>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn-quote" href="tel:2817575012">Call for quote</a>
-            <a class="btn-quote" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20mowing%20quote.%20My%20address%20is%20...%20Photos%20attached.">Text photos (fast)</a>
-          </div>
-          <p class="fine-print">Minimum service $50. Overgrowth and heavy edging may add to cost. Final quote after a quick call/text.</p>
-        </article>
-
-        <!-- Junk Removal (small pickup) -->
-        <article class="price-card">
-          <h3>Junk Removal (Small Pickup)</h3>
-          <div class="price">Starting at $80</div>
-          <ul class="included">
-            <li>Single item curbside: ~$80–$120</li>
-            <li>¼ bed: ~$120–$160 • ½ bed: ~$180–$260</li>
-            <li>¾ bed: ~$240–$320 • Full bed: ~$300–$380</li>
-          </ul>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn-quote" href="tel:2817575012">Call for quote</a>
-            <a class="btn-quote" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20junk%20removal%20quote.%20Photos%20attached.">Text photos</a>
-          </div>
-          <p class="fine-print">Small pickup bed ≈ 2–3 cu yd. Bedload (soil, concrete, roofing) and stairs/long carries may add to cost. No hazardous waste.</p>
-        </article>
-
-        <!-- Holiday Cleanups -->
-        <article class="price-card">
-          <h3>Holiday Cleanups</h3>
-          <div class="price">Typical range: $120–$250</div>
-          <ul class="included">
-            <li>Leaf & debris removal</li>
-            <li>Beds tidy & edge refresh</li>
-            <li>Patio/drive blowdown</li>
-          </ul>
-          <a class="btn-quote"
-             href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20to%20book%20a%20holiday%20cleanup.%20Address%3A%20...%20Preferred%20date%3A%20...%20Photos%20attached."
-             aria-label="Text to book a holiday cleanup">
-            Text to book
-          </a>
-          <p class="fine-print">Add-ons: gutter clean & haul-away. Final price based on volume & access.</p>
-        </article>
-
-        <!-- Specialty Landscaping -->
-        <article class="price-card">
-          <h3>Specialty Landscaping</h3>
-          <div class="price">Starting at $150</div>
-          <ul class="included">
-            <li>Sod installation</li>
-            <li>Mulch installation</li>
-            <li>Flowerbed renovation</li>
-          </ul>
-          <a class="btn-quote"
-             href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20help%20with%20a%20specialty%20landscaping%20project%20(sod%2Fmulch%2Fbed%20renovation).%20Address%3A%20...%20Photos%20attached."
-             aria-label="Text project details">
-            Text project (fast)
-          </a>
-          <p class="fine-print">Materials priced separately. Photos or a quick site visit help dial in the quote.</p>
-        </article>
-      </div>
-
-      <p class="fine-print" style="margin-top:12px;">Serving the Houston area. Text photos for the fastest quote.</p>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section id="reviews" class="content reviews-section">
-    <div class="text-content">
-      <h2>Reviews</h2>
-      <p>We’d love your feedback! Share your experience below.</p>
-
-      <!-- Google Business Profile -->
-      <p style="margin-top:12px;">
-        <a class="btn" href="https://g.page/r/CZAuNVnfW6q3EBM" target="_blank" rel="noopener noreferrer">
-          View our Google profile
-        </a>
-      </p>
-
-      <!-- Thumbtack button -->
-      <p style="margin-top:8px;">
-        <a class="btn" href="https://www.thumbtack.com/tx/houston/lawn-care/promised-landscaping-llc/service/542395709818036226" target="_blank" rel="noopener noreferrer">
-          View us on Thumbtack
-        </a>
-      </p>
-
-      <!-- Thumbtack (one-review) widget -->
-      <div class="thumbtack-widget-wrap">
-        <div class="widget" id="tt-review-widget-one">
-          <img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/logos/thumbtack/wordmark.svg" alt="Thumbtack" />
-          <div id="tt-dynamic">
-            <div class="tt-left">
-              <img src="https://cdn.thumbtackstatic.com/fe-assets-web/_assets/images/release/components/avatar/images/legacy-default-avatar-50x50.25cbe35c0002a2eef6cbc5f1c4f271545eafbb59.png" alt="" />
-            </div>
-            <div class="tt-right">
-              <div class="tt-name">Falak S.</div>
-              <div class="tt-stars">
-                <img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" alt="">
-                <img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" alt="">
-                <img src="https://cdn/thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" alt="">
-                <img src="https://cdn/thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" alt="">
-                <img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" alt="">
-                <span>28 reviews</span>
-                <span>6d ago</span>
-              </div>
-              <p>Same day service Nate did an amazing job couldn't be more happier!</p>
-              <a target="_blank" href="https://www.thumbtack.com/tx/houston/lawn-care/promised-landscaping-llc/service/542395709818036226">See all reviews</a>
-            </div>
-            <br/>
+          <div class="stats" aria-label="Business highlights">
+            <div class="stat"><b>$50+</b><span>Mowing minimum</span></div>
+            <div class="stat"><b>Houston</b><span>Local service area</span></div>
+            <div class="stat"><b>Fast</b><span>Quote by text</span></div>
           </div>
         </div>
-        <script src="https://www.thumbtack.com/profile/widgets/scripts/?service_pk=542395709818036226&widget_id=review&type=one"></script>
+
+        <aside class="hero-card" aria-label="Featured landscaping work">
+          <img src="assets/images/aftermulch.jpg" alt="Fresh mulch and finished landscaping bed" />
+          <strong>Clean cuts. Fresh beds. Better curb appeal.</strong>
+          <p>Send a few photos of your yard and address to get started.</p>
+        </aside>
       </div>
-      <!-- /Thumbtack widget -->
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="content contact-section">
-    <div class="text-content">
-      <h2>Contact</h2>
-      <p><strong>Phone:</strong> <a href="tel:2817575012">281-757-5012</a></p>
-      <p><strong>Email:</strong> <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a></p>
-    </div>
-    <img src="assets/images/OfficialPLogo.png" alt="Promised Landscaping logo" class="side-image" loading="lazy" decoding="async">
-  </section>
+    <section id="about">
+      <div class="container split">
+        <div class="photo-stack">
+          <img class="main-photo" src="assets/images/pitchforkme.jpg" alt="Promised Landscaping owner working outside" loading="lazy" decoding="async" />
+          <div class="badge-card">
+            <b>Owner-operated care</b>
+            <span>Simple communication, honest estimates, and work done with pride.</span>
+          </div>
+        </div>
+        <div class="section-head">
+          <div class="kicker">About</div>
+          <h2>Outdoor spaces that feel like your promised land.</h2>
+          <p>Promised Landscaping is inspired by the idea of the “Promised Land” — a place of beauty, abundance, and fulfillment. Every service is focused on helping your yard feel cleaner, healthier, and easier to enjoy.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Footer -->
+    <section id="services">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">Services</div>
+          <h2>What we can help with</h2>
+          <p>From weekly-looking lawn cuts to bigger cleanup and refresh projects, choose the service you need and text photos for the fastest quote.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <div class="service-icon">✂</div>
+            <h3>Lawn Mowing</h3>
+            <p>Stand-on mower cuts, weedeater edging, and blower cleanup.</p>
+          </article>
+          <article class="card">
+            <div class="service-icon">🍂</div>
+            <h3>Cleanups</h3>
+            <p>Leaf removal, debris cleanup, bed tidying, and seasonal refreshes.</p>
+          </article>
+          <article class="card">
+            <div class="service-icon">🌱</div>
+            <h3>Sod & Mulch</h3>
+            <p>Sod installation, mulch installation, and flowerbed renovation.</p>
+          </article>
+          <article class="card">
+            <div class="service-icon">🚚</div>
+            <h3>Junk Removal</h3>
+            <p>Small pickup haul-away for yard debris and approved non-hazardous items.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">Watch the Work</div>
+          <h2>See a yard transformation</h2>
+          <p>Follow the YouTube channel for mowing, cleanup, and landscaping videos around the Houston area.</p>
+          <div class="button-row" style="justify-content:center; margin-top: 18px;">
+            <a class="btn btn-primary" href="https://www.youtube.com/@PromisedLandscaping" target="_blank" rel="noopener noreferrer">Visit YouTube Channel</a>
+          </div>
+        </div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/BrLZETsxRhA"
+            title="Relaxing Huge Front Corner Yard Lawn Cut – The Woodlands, Texas"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">Pricing</div>
+          <h2>Clear starting prices</h2>
+          <p>Final quote depends on lot size, access, obstacles, growth, haul-away volume, and materials. Text photos for a faster estimate.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="card price-card featured">
+            <h3>Mowing</h3>
+            <div class="chip-group mow-size" aria-label="Select lot type">
+              <button class="chip selected" data-key="small">Small ≤ 4k sq ft</button>
+              <button class="chip" data-key="medium">Mixed yard</button>
+              <button class="chip" data-key="corner">Corner lot</button>
+              <button class="chip" data-key="huge">Huge / long ditch</button>
+            </div>
+            <div class="addons">
+              <label><input type="checkbox" class="mow-addon" data-key="overgrowth" /> Overgrowth +$20</label>
+              <label><input type="checkbox" class="mow-addon" data-key="edge" /> Heavy edge refresh +$15</label>
+            </div>
+            <div class="price"><span id="mowPrice">$50+</span></div>
+            <ul class="included">
+              <li>Stand-on mower cut</li>
+              <li>Weedeater edging</li>
+              <li>Leaf blower cleanup</li>
+            </ul>
+            <div class="button-row">
+              <a class="btn btn-dark" href="tel:2817575012">Call</a>
+              <a class="btn btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20mowing%20quote.%20My%20address%20is%20...%20Photos%20attached.">Text Photos</a>
+            </div>
+            <p class="fine-print">Minimum service $50. Final quote after a quick call or text.</p>
+          </article>
+
+          <article class="card price-card">
+            <h3>Junk Removal</h3>
+            <div class="price">$80+</div>
+            <ul class="included">
+              <li>Single item curbside: about $80–$120</li>
+              <li>¼ bed: about $120–$160</li>
+              <li>½ bed: about $180–$260</li>
+              <li>Full bed: about $300–$380</li>
+            </ul>
+            <a class="btn btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20junk%20removal%20quote.%20Photos%20attached.">Text Photos</a>
+            <p class="fine-print">No hazardous waste. Heavy loads, stairs, and long carries may affect price.</p>
+          </article>
+
+          <article class="card price-card">
+            <h3>Holiday & Seasonal Cleanups</h3>
+            <div class="price">$120–$250</div>
+            <ul class="included">
+              <li>Leaf and debris removal</li>
+              <li>Beds tidy and edge refresh</li>
+              <li>Patio and driveway blowdown</li>
+            </ul>
+            <a class="btn btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20to%20book%20a%20holiday%20cleanup.%20Address%3A%20...%20Preferred%20date%3A%20...%20Photos%20attached.">Text to Book</a>
+            <p class="fine-print">Final price based on volume, haul-away, and access.</p>
+          </article>
+
+          <article class="card price-card">
+            <h3>Specialty Landscaping</h3>
+            <div class="price">$150+</div>
+            <ul class="included">
+              <li>Sod installation</li>
+              <li>Mulch installation</li>
+              <li>Flowerbed renovation</li>
+            </ul>
+            <a class="btn btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20help%20with%20a%20specialty%20landscaping%20project%20(sod%2Fmulch%2Fbed%20renovation).%20Address%3A%20...%20Photos%20attached.">Text Project</a>
+            <p class="fine-print">Materials priced separately. Photos or a quick visit help dial in the quote.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">Photo Ideas</div>
+          <h2>Photos that will sell the work</h2>
+          <p>Use clear, bright, real job-site photos. Before-and-after shots are the strongest because visitors instantly understand the value.</p>
+        </div>
+
+        <div class="photo-grid">
+          <article class="card photo-card">
+            <img src="assets/images/midsod3.jpg" alt="Sod installation in progress" loading="lazy" decoding="async" />
+            <div><h3>Sod in progress</h3><p>Show fresh grass being installed, not just finished lawns.</p></div>
+          </article>
+          <article class="card photo-card">
+            <img src="assets/images/aftermulch.jpg" alt="Fresh mulch after landscaping" loading="lazy" decoding="async" />
+            <div><h3>Finished mulch</h3><p>Use close, clean angles of flowerbeds and crisp borders.</p></div>
+          </article>
+          <article class="card photo-card">
+            <img src="assets/images/micrograss.jpg" alt="Close-up of healthy grass" loading="lazy" decoding="async" />
+            <div><h3>Healthy grass</h3><p>Great for backgrounds and texture, but pair it with real job photos.</p></div>
+          </article>
+          <article class="card photo-card">
+            <img src="assets/images/pitchforkme.jpg" alt="Owner working on a landscaping project" loading="lazy" decoding="async" />
+            <div><h3>You working</h3><p>Owner photos build trust. Use friendly, professional action shots.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <article class="card review-card">
+          <div class="kicker">Reviews</div>
+          <h2>Local customers. Real feedback.</h2>
+          <div class="stars">★★★★★</div>
+          <p>“Same day service Nate did an amazing job couldn't be more happier!”</p>
+          <div class="button-row" style="justify-content:center; margin-top: 22px;">
+            <a class="btn btn-dark" href="https://g.page/r/CZAuNVnfW6q3EBM" target="_blank" rel="noopener noreferrer">Google Profile</a>
+            <a class="btn btn-primary" href="https://www.thumbtack.com/tx/houston/lawn-care/promised-landscaping-llc/service/542395709818036226" target="_blank" rel="noopener noreferrer">Thumbtack Reviews</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">Contact</div>
+          <h2>Ready for a cleaner yard?</h2>
+          <p>Send your address and a few photos. You’ll get a faster, more accurate estimate.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p>Call</p>
+            <a href="tel:2817575012">281-757-5012</a>
+          </div>
+          <div class="contact-card">
+            <p>Text</p>
+            <a href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20quote.%20My%20address%20is%20...%20Photos%20attached.">Send photos</a>
+          </div>
+          <div class="contact-card">
+            <p>Email</p>
+            <a href="mailto:promisedlandscapingleo@gmail.com">promisedlandscapingleo@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2025 Promised Landscaping. <a href="#contact">Contact Us</a>.</p>
+    <div class="container">
+      <p>&copy; 2026 Promised Landscaping LLC. Houston area lawn care and landscaping.</p>
+    </div>
   </footer>
 
-  <!-- Load YouTube platform for Subscribe button -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-  <!-- Script: mowing price selector (with your exact tiers) -->
   <script>
     (function() {
-      // ===== EASY PRICE CONTROLS =====
-      const MULTIPLIER = 1.00; // bump to raise all mowing tiers at once
-
-      // Your example-based tiers
-      const TIERS = {
-        small: 50,    // Small ≤ 4k sq ft
-        medium: 65,   // Mixed yard (small front / big back)
-        corner: 80,   // Corner lot
-        huge: 200     // Huge yard / long ditch
-      };
-
-      // Optional add-ons
+      const MULTIPLIER = 1.00;
+      const TIERS = { small: 50, medium: 65, corner: 80, huge: 200 };
       const ADDONS = { overgrowth: 20, edge: 15 };
-      // ===== /EASY PRICE CONTROLS =====
-
       let currentTierKey = 'small';
       const selected = new Set();
-
       const chips = document.querySelectorAll('.mow-size .chip');
       const priceEl = document.getElementById('mowPrice');
       const addonInputs = document.querySelectorAll('.mow-addon');
 
       function basePrice() { return Math.round((TIERS[currentTierKey] || 50) * MULTIPLIER); }
-      function addonsTotal() { let t = 0; selected.forEach(k => t += (ADDONS[k] || 0)); return t; }
+      function addonsTotal() {
+        let total = 0;
+        selected.forEach(key => { total += ADDONS[key] || 0; });
+        return total;
+      }
       function updatePrice() { priceEl.textContent = '$' + (basePrice() + addonsTotal()) + '+'; }
 
       chips.forEach(chip => {
@@ -449,12 +760,15 @@
           updatePrice();
         });
       });
+
       addonInputs.forEach(cb => {
         cb.addEventListener('change', () => {
-          if (cb.checked) selected.add(cb.dataset.key); else selected.delete(cb.dataset.key);
+          if (cb.checked) selected.add(cb.dataset.key);
+          else selected.delete(cb.dataset.key);
           updatePrice();
         });
       });
+
       updatePrice();
     })();
   </script>
