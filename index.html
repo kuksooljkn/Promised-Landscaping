@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Promised Landscaping — Premium lawn care, landscaping, and tree trimming in Houston, Texas. Call or text for a free quote: 281-757-5012.">
+  <meta name="keywords" content="lawn care Houston, landscaping Houston, tree trimming Houston, mulch installation, sod installation, lawn mowing Woodlands TX">
+  <meta property="og:title" content="Promised Landscaping | Houston's Premium Lawn Care">
+  <meta property="og:description" content="Expert lawn care, landscaping & tree trimming in the Houston area. Free quotes. Call 281-757-5012.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://promisedlandscapingleo.com">
+  <link rel="icon" href="assets/images/OfficialPLogo.png?v=3" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/OfficialPLogo.png?v=3">
+  <title>Promised Landscaping | Houston's Premium Lawn Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:#f5f0e8;--offwhite:#faf8f4;--dark:#141410;--charcoal:#1e1e18;--mid:#3a3a30;
+      --gold:#b8986a;--gold-lt:#d4b88a;--green:#2d4a2a;--green-lt:#3d6438;
+      --text:#2a2a20;--muted:#7a7a68;
+      --font-display:'Cormorant Garamond',Georgia,serif;--font-body:'DM Sans',sans-serif;
+      --section-pad:100px 0;--container:1100px;--radius:4px;--transition:0.3s ease;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);background:var(--offwhite);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    img{display:block;max-width:100%;height:auto;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:var(--container);margin:0 auto;padding:0 28px;}
+    .gold-line{display:block;width:48px;height:2px;background:var(--gold);margin:0 auto 22px;}
+    .gold-line--left{margin-left:0;}
+    .label{font-family:var(--font-body);font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--dark);font-family:var(--font-body);font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:14px 28px;border-radius:var(--radius);transition:background var(--transition),transform var(--transition);white-space:nowrap;}
+    .btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--gold);border:1.5px solid var(--gold);font-family:var(--font-body);font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:13px 26px;border-radius:var(--radius);transition:all var(--transition);white-space:nowrap;}
+    .btn-outline:hover{background:var(--gold);color:var(--dark);transform:translateY(-2px);}
+    .btn-white{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--dark);font-family:var(--font-body);font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:14px 28px;border-radius:var(--radius);transition:all var(--transition);white-space:nowrap;}
+    .btn-white:hover{background:var(--cream);transform:translateY(-2px);}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(20,20,16,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(184,152,106,0.15);transition:all var(--transition);}
+    .nav-inner{max-width:var(--container);margin:0 auto;padding:0 28px 0 16px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:#ffffff;letter-spacing:0.02em;display:flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap;text-shadow:0 0 20px rgba(255,255,255,0.15);}
+    .nav-logo span{color:var(--gold);}
+    .nav-logo img{width:36px;height:36px;object-fit:contain;border-radius:6px;mix-blend-mode:luminosity;opacity:0.9;}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color var(--transition);}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-cta{display:flex;gap:10px;margin-left:16px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
+    .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--transition);}
+    .mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;background:var(--dark);border-bottom:1px solid rgba(184,152,106,0.2);z-index:99;padding:24px 28px 32px;flex-direction:column;gap:20px;animation:slideDown 0.2s ease;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:rgba(255,255,255,0.85);letter-spacing:0.08em;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+    .mobile-nav .mobile-cta{display:flex;flex-direction:column;gap:12px;margin-top:12px;}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(14,14,10,0.92) 0%,rgba(14,14,10,0.6) 55%,rgba(14,14,10,0.3) 100%),url('assets/images/micrograss.jpg') center/cover no-repeat;}
+    .hero-bg::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");opacity:0.4;pointer-events:none;}
+    .hero-lines{position:absolute;inset:0;pointer-events:none;}
+    .hero-lines::before,.hero-lines::after{content:'';position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(184,152,106,0.2),transparent);}
+    .hero-lines::before{left:10%;}
+    .hero-lines::after{left:20%;}
+    .hero-content{position:relative;z-index:2;max-width:var(--container);margin:0 auto;padding:120px 28px 80px;max-width:680px;margin-left:8%;}
+    .hero-eyebrow{font-family:var(--font-body);font-size:0.72rem;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+    .hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+    .hero h1{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:600;color:#fff;line-height:1.08;letter-spacing:-0.01em;margin-bottom:24px;}
+    .hero h1 em{color:var(--gold);font-style:italic;}
+    .hero-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:40px;max-width:500px;}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+    .hero-trust{position:relative;z-index:2;max-width:var(--container);margin:0 8% 0;padding:0 28px 60px;display:flex;gap:32px;flex-wrap:wrap;}
+    .trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.6);font-size:0.82rem;font-weight:400;letter-spacing:0.04em;}
+    .trust-icon{width:36px;height:36px;border:1px solid rgba(184,152,106,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+    .lead-bar{background:var(--green);padding:18px 28px;text-align:center;}
+    .lead-bar-inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+    .lead-bar p{color:rgba(255,255,255,0.9);font-size:0.9rem;font-weight:400;letter-spacing:0.04em;}
+    .lead-bar strong{color:#fff;}
+    .about{padding:var(--section-pad);background:#fff;}
+    .about-inner{max-width:var(--container);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .about-img-wrap{position:relative;}
+    .about-img{width:100%;height:520px;object-fit:cover;border-radius:var(--radius);}
+    .about-img-wrap::before{content:'';position:absolute;top:-16px;left:-16px;right:40px;bottom:40px;border:1px solid var(--gold);border-radius:var(--radius);z-index:0;}
+    .about-img-wrap img{position:relative;z-index:1;}
+    .about-text h2{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;color:var(--dark);line-height:1.15;margin-bottom:20px;}
+    .about-text p{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:16px;}
+    .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0;padding:28px 0;border-top:1px solid #e8e4dc;border-bottom:1px solid #e8e4dc;}
+    .stat-num{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--dark);line-height:1;}
+    .stat-label{font-size:0.78rem;font-weight:500;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:6px;}
+    .services{padding:var(--section-pad);background:var(--charcoal);}
+    .services-header{text-align:center;margin-bottom:64px;}
+    .services-header h2{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;color:#fff;line-height:1.15;}
+    .services-header p{color:rgba(255,255,255,0.55);font-size:1rem;margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto;}
+    .services-grid{max-width:var(--container);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+    .service-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);padding:44px 36px;position:relative;overflow:hidden;transition:background var(--transition),border-color var(--transition);}
+    .service-card:hover{background:rgba(255,255,255,0.06);border-color:rgba(184,152,106,0.3);}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+    .service-card:hover::before{transform:scaleX(1);}
+    .service-number{font-family:var(--font-display);font-size:4rem;font-weight:700;color:rgba(184,152,106,0.12);line-height:1;margin-bottom:20px;}
+    .service-icon{font-size:2rem;margin-bottom:16px;}
+    .service-card h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:#fff;margin-bottom:14px;line-height:1.2;}
+    .service-card p{font-size:0.92rem;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:24px;}
+    .service-detail{display:flex;flex-direction:column;gap:8px;margin-top:auto;}
+    .service-detail span{font-size:0.8rem;color:rgba(255,255,255,0.4);padding-left:14px;position:relative;}
+    .service-detail span::before{content:'—';position:absolute;left:0;color:var(--gold);}
+    .youtube-strip{padding:80px 0;background:var(--cream);}
+    .youtube-strip-inner{max-width:var(--container);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+    .yt-text h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:600;color:var(--dark);line-height:1.2;margin-bottom:14px;}
+    .yt-text p{font-size:0.95rem;color:var(--muted);line-height:1.8;margin-bottom:24px;}
+    .yt-embed{border-radius:6px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.15);aspect-ratio:16/9;}
+    .yt-embed iframe{width:100%;height:100%;border:0;display:block;}
+    .pricing{padding:var(--section-pad);background:#fff;}
+    .pricing-header{text-align:center;margin-bottom:64px;}
+    .pricing-header h2{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;color:var(--dark);line-height:1.15;}
+    .pricing-header p{color:var(--muted);font-size:1rem;margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto;}
+    .pricing-grid{max-width:var(--container);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .price-card{border:1px solid #e8e4dc;border-radius:6px;padding:40px 32px;position:relative;transition:box-shadow var(--transition),border-color var(--transition),transform var(--transition);}
+    .price-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.09);border-color:var(--gold);transform:translateY(-4px);}
+    .price-card.featured{background:var(--dark);border-color:var(--gold);}
+    .price-card.featured .price-name,.price-card.featured .price-desc,.price-card.featured .price-include li{color:rgba(255,255,255,0.75);}
+    .price-card.featured .price-amount{color:#fff;}
+    .price-card.featured .price-name{color:var(--gold-lt);}
+    .price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:4px 14px;border-radius:999px;}
+    .price-name{font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+    .price-amount{font-family:var(--font-display);font-size:2.6rem;font-weight:700;color:var(--dark);line-height:1;margin-bottom:6px;}
+    .price-unit{font-family:var(--font-body);font-size:0.9rem;color:var(--muted);font-weight:400;}
+    .price-desc{font-size:0.88rem;color:var(--muted);line-height:1.7;margin:16px 0 22px;padding-bottom:22px;border-bottom:1px solid #e8e4dc;}
+    .price-card.featured .price-desc{border-bottom-color:rgba(255,255,255,0.1);}
+    .price-include{list-style:none;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;}
+    .price-include li{font-size:0.88rem;color:var(--text);padding-left:20px;position:relative;}
+    .price-include li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-size:0.75rem;top:2px;}
+    .price-note{font-size:0.76rem;color:var(--muted);margin-top:14px;line-height:1.6;}
+    .pricing-footer{text-align:center;margin-top:48px;color:var(--muted);font-size:0.88rem;}
+    .reviews{padding:var(--section-pad);background:var(--charcoal);}
+    .reviews-header{text-align:center;margin-bottom:64px;}
+    .reviews-header h2{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;color:#fff;line-height:1.15;}
+    .reviews-header p{color:rgba(255,255,255,0.5);font-size:1rem;margin-top:14px;}
+    .reviews-grid{max-width:var(--container);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
+    .review-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:32px 28px;transition:border-color var(--transition);}
+    .review-card:hover{border-color:rgba(184,152,106,0.3);}
+    .stars{color:var(--gold);font-size:0.9rem;letter-spacing:2px;margin-bottom:16px;}
+    .review-text{font-family:var(--font-display);font-size:1.1rem;font-style:italic;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:22px;}
+    .review-author{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+    .review-via{font-size:0.74rem;color:rgba(255,255,255,0.35);margin-top:3px;}
+    .reviews-cta{text-align:center;max-width:var(--container);margin:0 auto;padding:0 28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .contact{padding:var(--section-pad);background:var(--cream);}
+    .contact-inner{max-width:var(--container);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .contact-text h2{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;color:var(--dark);line-height:1.15;margin-bottom:16px;}
+    .contact-text p{font-size:0.95rem;color:var(--muted);line-height:1.8;margin-bottom:36px;}
+    .contact-methods{display:flex;flex-direction:column;gap:16px;}
+    .contact-method{display:flex;align-items:center;gap:18px;padding:22px 24px;background:#fff;border:1px solid #e8e4dc;border-radius:6px;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition);text-decoration:none;}
+    .contact-method:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(0,0,0,0.07);transform:translateY(-2px);}
+    .contact-method-icon{width:48px;height:48px;background:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+    .contact-method-text strong{display:block;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+    .contact-method-text span{font-size:1.05rem;font-weight:500;color:var(--dark);}
+    .contact-info-col{padding-top:8px;}
+    .contact-info-col h3{font-family:var(--font-display);font-size:1.7rem;font-weight:600;color:var(--dark);margin-bottom:16px;}
+    .contact-info-col p{font-size:0.92rem;color:var(--muted);line-height:1.8;margin-bottom:28px;}
+    .service-area-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+    .area-tag{background:#fff;border:1px solid #e8e4dc;color:var(--text);font-size:0.78rem;font-weight:500;padding:6px 14px;border-radius:999px;}
+    .contact-logo{width:120px;opacity:0.85;}
+    footer{background:var(--dark);border-top:1px solid rgba(184,152,106,0.15);padding:40px 28px;}
+    .footer-inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+    .footer-brand{font-family:var(--font-display);font-size:1.2rem;color:#fff;}
+    .footer-brand span{color:var(--gold);}
+    .footer-links{display:flex;gap:28px;list-style:none;}
+    .footer-links a{font-size:0.78rem;color:rgba(255,255,255,0.45);letter-spacing:0.08em;transition:color var(--transition);}
+    .footer-links a:hover{color:var(--gold);}
+    .footer-copy{font-size:0.76rem;color:rgba(255,255,255,0.3);}
+    @media(max-width:900px){
+      .nav-links,.nav-cta{display:none;}
+      .hamburger{display:flex;}
+      .hero-content{margin-left:5%;}
+      .about-inner{grid-template-columns:1fr;gap:40px;}
+      .about-img-wrap::before{display:none;}
+      .about-img{height:320px;}
+      .services-grid{grid-template-columns:1fr;gap:1px;}
+      .youtube-strip-inner{grid-template-columns:1fr;gap:36px;}
+      .pricing-grid{grid-template-columns:1fr;}
+      .reviews-grid{grid-template-columns:1fr;}
+      .contact-inner{grid-template-columns:1fr;gap:40px;}
+      .footer-inner{flex-direction:column;text-align:center;}
+      .footer-links{justify-content:center;}
+    }
+    @media(max-width:600px){
+      .hero h1{font-size:2.6rem;}
+      .hero-trust{display:none;}
+      :root{--section-pad:72px 0;}
+    }
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:none;}
+    .reveal-delay-1{transition-delay:0.1s;}
+    .reveal-delay-2{transition-delay:0.2s;}
+    .reveal-delay-3{transition-delay:0.3s;}
+
+    /* ── LEO button ── */
+    .leo-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(20,20,16,0.82);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(184,152,106,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(184,152,106,0.65);
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .leo-btn:hover {
+      color: var(--gold);
+      border-color: rgba(184,152,106,0.6);
+      background: rgba(20,20,16,0.96);
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Promised Landscaping home">
+        <img src="assets/images/OfficialPLogo.png" alt="" aria-hidden="true">
+        Promised <span>Landscaping</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn-outline" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20free%20quote.%20My%20address%20is%20...">✉ Text Us</a>
+        <a class="btn-primary" href="tel:2817575012">📞 281-757-5012</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile menu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+    <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <div class="mobile-cta">
+      <a class="btn-primary" href="tel:2817575012">📞 Call — 281-757-5012</a>
+      <a class="btn-outline" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20free%20quote.%20My%20address%20is%20...">✉ Text for a Free Quote</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-lines" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Houston Area Premium Lawn Care</div>
+      <h1>Your Lawn,<br><em>Transformed.</em></h1>
+      <p class="hero-sub">Expert lawn care, custom landscaping, and professional tree trimming — delivered with precision and pride, every time.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:2817575012">📞 Call for a Free Quote</a>
+        <a class="btn-white" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20free%20quote.%20My%20address%20is%20...%20Photos%20attached.">📸 Text Us Photos</a>
+      </div>
+    </div>
+    <div class="hero-trust" aria-label="Trust indicators">
+      <div class="trust-item"><div class="trust-icon" aria-hidden="true">⭐</div><span>5-Star Rated on Google &amp; Thumbtack</span></div>
+      <div class="trust-item"><div class="trust-icon" aria-hidden="true">📍</div><span>Serving Houston &amp; Woodlands</span></div>
+      <div class="trust-item"><div class="trust-icon" aria-hidden="true">⚡</div><span>Same-Day Service Available</span></div>
+    </div>
+  </header>
+
+  <!-- LEAD BAR -->
+  <div class="lead-bar" role="complementary" aria-label="Quick contact">
+    <div class="lead-bar-inner">
+      <p><strong>Ready for a free quote?</strong> Fastest response: text us a photo of your yard.</p>
+      <a class="btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20free%20quote.%20My%20address%20is%20...%20Photos%20attached.">📸 Text Photos Now</a>
+      <a class="btn-outline" style="border-color:rgba(255,255,255,0.5);color:#fff;" href="tel:2817575012">📞 Call Us</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <div class="about-inner">
+      <div class="about-img-wrap reveal">
+        <img src="assets/images/self.JPEG" alt="Nate, owner of Promised Landscaping, on the job" class="about-img" loading="lazy">
+      </div>
+      <div class="about-text">
+        <span class="label">About Us</span>
+        <span class="gold-line gold-line--left" aria-hidden="true"></span>
+        <h2 id="about-heading">Built on a Promise<br>of Excellence</h2>
+        <p>Promised Landscaping was founded on the belief that every yard deserves to be a place of beauty and pride — your own Promised Land. I'm Nate, and I handle every job personally with the same care I'd give my own property.</p>
+        <p>From weekly lawn maintenance to complete landscape transformations, my goal is simple: show up, do great work, and make sure you're thrilled with the result.</p>
+        <div class="about-stats">
+          <div><div class="stat-num">28+</div><div class="stat-label">5-Star Reviews</div></div>
+          <div><div class="stat-num">100%</div><div class="stat-label">Satisfaction Goal</div></div>
+          <div><div class="stat-num">⚡</div><div class="stat-label">Same-Day Available</div></div>
+          <div><div class="stat-num">📍</div><div class="stat-label">Houston Area</div></div>
+        </div>
+        <a class="btn-primary" href="tel:2817575012">Get Your Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="label">What We Do</span>
+        <span class="gold-line" aria-hidden="true"></span>
+        <h2 id="services-heading">Premium Services,<br>Delivered With Precision</h2>
+        <p>Three core services, done exceptionally well. Every visit, every time.</p>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-number" aria-hidden="true">01</div>
+        <div class="service-icon" aria-hidden="true">🌿</div>
+        <h3>Lawn Care &amp; Mowing</h3>
+        <p>Professional stand-on mower cuts, precise weedeater edging, and a clean blower finish — every visit leaves your lawn looking sharp.</p>
+        <div class="service-detail" aria-label="Includes">
+          <span>Stand-on mower cut</span><span>Weedeater edging &amp; trim</span>
+          <span>Leaf blower cleanup</span><span>Ditch &amp; overgrowth handling</span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-number" aria-hidden="true">02</div>
+        <div class="service-icon" aria-hidden="true">🌱</div>
+        <h3>Landscaping &amp; Planting</h3>
+        <p>From fresh sod and mulch installations to full flowerbed renovations — custom landscaping that enhances your home's curb appeal.</p>
+        <div class="service-detail" aria-label="Includes">
+          <span>Sod installation</span><span>Mulch &amp; bed installation</span>
+          <span>Flowerbed renovation</span><span>Planting &amp; bed edging</span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-number" aria-hidden="true">03</div>
+        <div class="service-icon" aria-hidden="true">🌳</div>
+        <h3>Tree Trimming</h3>
+        <p>Keep your trees healthy, safe, and looking their best. Proper trimming promotes growth and protects your property.</p>
+        <div class="service-detail" aria-label="Includes">
+          <span>Crown shaping &amp; thinning</span><span>Dead branch removal</span>
+          <span>Clearance trimming</span><span>Debris removal &amp; cleanup</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px;">
+      <a class="btn-primary" href="tel:2817575012">📞 Call for a Quote on Any Service</a>
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section class="youtube-strip" aria-labelledby="yt-heading">
+    <div class="youtube-strip-inner">
+      <div class="yt-text reveal">
+        <span class="label">See Our Work</span>
+        <span class="gold-line gold-line--left" aria-hidden="true"></span>
+        <h2 id="yt-heading">Watch Us Work — Real Jobs, Real Results</h2>
+        <p>No staged shots. Follow along on our YouTube channel for real lawn transformations across the Houston area.</p>
+        <a class="btn-primary" href="https://www.youtube.com/@PromisedLandscaping" target="_blank" rel="noopener noreferrer">▶ Visit Our Channel</a>
+      </div>
+      <div class="yt-embed reveal reveal-delay-1" aria-label="YouTube video">
+        <iframe src="https://www.youtube.com/embed/BrLZETsxRhA" title="Relaxing Huge Front Corner Yard Lawn Cut – The Woodlands, Texas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="pricing-header reveal">
+        <span class="label">Transparent Pricing</span>
+        <span class="gold-line" aria-hidden="true"></span>
+        <h2 id="pricing-heading">Clear Starting Prices.<br>No Surprises.</h2>
+        <p>Final quote after a quick text or call — based on your lot size, condition, and scope. Photos get you a quote fastest.</p>
+      </div>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card featured reveal reveal-delay-1">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-name">Lawn Mowing</div>
+        <div class="price-amount">$50 <span class="price-unit">and up</span></div>
+        <div class="price-desc">Stand-on mower precision cut with edging and cleanup. Pricing by lot size and condition.</div>
+        <ul class="price-include">
+          <li>Small lots (≤4k sq ft) — from $50</li><li>Mixed yard / front &amp; back — from $65</li>
+          <li>Corner lots — from $80</li><li>Large / long ditch yards — from $200</li>
+          <li>Overgrowth surcharge: +$20</li><li>Heavy edge refresh: +$15</li>
+        </ul>
+        <a class="btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20mowing%20quote." style="width:100%;justify-content:center;">📸 Text Photos for Quote</a>
+        <p class="price-note">Minimum service $50. Final price confirmed after seeing your yard.</p>
+      </div>
+      <div class="price-card reveal reveal-delay-2">
+        <div class="price-name">Landscaping &amp; Planting</div>
+        <div class="price-amount">$150 <span class="price-unit">and up</span></div>
+        <div class="price-desc">Sod, mulch, beds, and plantings done right. Pricing depends on materials and project scope.</div>
+        <ul class="price-include">
+          <li>Mulch installation</li><li>Sod installation</li>
+          <li>Flowerbed renovation</li><li>Planting &amp; edging</li>
+        </ul>
+        <a class="btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20landscaping%20quote." style="width:100%;justify-content:center;">📸 Text Project Details</a>
+        <p class="price-note">Materials priced separately. Photos or a site visit help dial in the quote.</p>
+      </div>
+      <div class="price-card reveal reveal-delay-3">
+        <div class="price-name">Tree Trimming</div>
+        <div class="price-amount">$100 <span class="price-unit">and up</span></div>
+        <div class="price-desc">Professional trimming to keep your trees healthy, safe, and looking great year-round.</div>
+        <ul class="price-include">
+          <li>Crown shaping &amp; thinning</li><li>Dead branch removal</li>
+          <li>Clearance trimming</li><li>Debris cleanup &amp; haul</li>
+        </ul>
+        <a class="btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20tree%20trimming%20quote." style="width:100%;justify-content:center;">📸 Text for a Quote</a>
+        <p class="price-note">Pricing varies by tree size, height, and access. Quote after photos or site visit.</p>
+      </div>
+    </div>
+    <p class="pricing-footer">Serving Houston, The Woodlands, and surrounding areas. &nbsp;·&nbsp; <a href="tel:2817575012" style="color:var(--gold);font-weight:600;">281-757-5012</a></p>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reviews" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="reviews-header reveal">
+        <span class="label">Client Reviews</span>
+        <span class="gold-line" aria-hidden="true"></span>
+        <h2 id="reviews-heading">What Our Clients Say</h2>
+        <p>28+ five-star reviews on Google and Thumbtack.</p>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal reveal-delay-1">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="review-text">"Same day service — Nate did an amazing job, couldn't be more happier!"</p>
+        <div class="review-author">Falak S.</div><div class="review-via">via Thumbtack</div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="review-text">"Showed up on time, yard looks incredible. Will definitely be using Promised Landscaping again."</p>
+        <div class="review-author">Houston Area Client</div><div class="review-via">via Google</div>
+      </div>
+      <div class="review-card reveal reveal-delay-3">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="review-text">"Professional, fast, and the price was fair. My lawn has never looked this good — highly recommend."</p>
+        <div class="review-author">Woodlands Homeowner</div><div class="review-via">via Google</div>
+      </div>
+    </div>
+    <div class="reviews-cta">
+      <a class="btn-primary" href="https://g.page/r/CZAuNVnfW6q3EBM" target="_blank" rel="noopener noreferrer">⭐ See Google Reviews</a>
+      <a class="btn-outline" style="border-color:rgba(255,255,255,0.35);color:#fff;" href="https://www.thumbtack.com/tx/houston/lawn-care/promised-landscaping-llc/service/542395709818036226" target="_blank" rel="noopener noreferrer">View Thumbtack Profile</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact" aria-labelledby="contact-heading">
+    <div class="contact-inner">
+      <div class="contact-text reveal">
+        <span class="label">Get in Touch</span>
+        <span class="gold-line gold-line--left" aria-hidden="true"></span>
+        <h2 id="contact-heading">Get Your Free<br>Quote Today</h2>
+        <p>The fastest way to get a quote is to text us a photo of your yard — we'll usually respond within the hour. Or just give us a call.</p>
+        <div class="contact-methods">
+          <a class="contact-method" href="tel:2817575012" aria-label="Call Promised Landscaping">
+            <div class="contact-method-icon" aria-hidden="true">📞</div>
+            <div class="contact-method-text"><strong>Call or Text</strong><span>281-757-5012</span></div>
+          </a>
+          <a class="contact-method" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20free%20quote." aria-label="Text Promised Landscaping">
+            <div class="contact-method-icon" aria-hidden="true">📸</div>
+            <div class="contact-method-text"><strong>Text Photos (Fastest)</strong><span>Pre-filled message — just send your address &amp; photos</span></div>
+          </a>
+          <a class="contact-method" href="mailto:promisedlandscapingleo@gmail.com" aria-label="Email Promised Landscaping">
+            <div class="contact-method-icon" aria-hidden="true">✉️</div>
+            <div class="contact-method-text"><strong>Email</strong><span>promisedlandscapingleo@gmail.com</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-info-col reveal reveal-delay-1">
+        <h3>Service Area</h3>
+        <p>Based in Houston, Texas. We serve the greater Houston area and surrounding communities.</p>
+        <div class="service-area-tags" aria-label="Service areas">
+          <span class="area-tag">Houston</span><span class="area-tag">The Woodlands</span>
+          <span class="area-tag">Spring</span><span class="area-tag">Katy</span>
+          <span class="area-tag">Sugar Land</span><span class="area-tag">Conroe</span>
+          <span class="area-tag">Cypress</span><span class="area-tag">Tomball</span>
+        </div>
+        <a class="btn-primary" href="sms:+12817575012?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20free%20quote." style="margin-bottom:32px;display:inline-flex;">Get Your Free Quote</a>
+        <br>
+        <img src="assets/images/OfficialPLogo.png" alt="Promised Landscaping logo" class="contact-logo" loading="lazy">
+        <p style="margin-top:14px;font-size:0.82rem;font-style:italic;color:var(--muted);">"Tomorrow isn't promised, but the land sure is."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">Promised <span>Landscaping</span></div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2025 Promised Landscaping. Houston, TX &nbsp;·&nbsp; <a href="tel:2817575012" style="color:var(--gold);">281-757-5012</a></div>
+    </div>
+  </footer>
+
+  <!-- ===== LEO BUTTON ===== -->
+  <a href="master_quiz.html" class="leo-btn" aria-label="LEO Study Tool">LEO</a>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+    document.addEventListener('click',function(e){
+      const nav=document.getElementById('mobileNav');
+      if(nav.classList.contains('open')&&!nav.contains(e.target)&&!e.target.closest('.hamburger'))nav.classList.remove('open');
+    });
+    const reveals=document.querySelectorAll('.reveal');
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});
+    },{threshold:0.12});
+    reveals.forEach(el=>observer.observe(el));
+    window.addEventListener('scroll',()=>{
+      const nav=document.querySelector('.nav');
+      nav.style.borderBottomColor=window.scrollY>60?'rgba(184,152,106,0.25)':'rgba(184,152,106,0.15)';
+    });
+  </script>
+</body>
+</html>
