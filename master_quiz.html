@@ -8,7 +8,7 @@
 // Password gate — runs before anything else loads
 (function(){
   const PASS = 'Password1';
-  const SESSION_KEY = 'hcco_auth';
+  const SESSION_KEY = 'c4_auth';
   if(sessionStorage.getItem(SESSION_KEY) === '1') return; // already authenticated this session
   // Hide everything until authenticated
   document.addEventListener('DOMContentLoaded', function(){
@@ -155,7 +155,7 @@
 </head>
 <body>
 <header>
-  <h1>HCCO Precinct 4 — Master Board Prep</h1>
+  <h1>Master Board Prep</h1>
   <p class="subtitle">SOPs &bull; Policy &amp; Ethics &bull; Texas Law &bull; Oral Review Board</p>
   <div class="stats-bar">Total questions: <span id="total-count">—</span> &nbsp;|&nbsp; Topics: <span id="topic-count">—</span></div>
 </header>
