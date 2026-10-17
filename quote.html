@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Landscaping Quote | Promised Landscaping Houston</title>
+<meta name="description" content="Request a free lawn care or landscaping estimate from Promised Landscaping in Houston, Texas.">
+<link rel="icon" href="assets/images/OfficialPLogo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#b8986a;--green:#2d4a2a;--dark:#141410;--cream:#faf8f4}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:#24241e;font:16px/1.55 'DM Sans',sans-serif}
+header{background:var(--dark);color:white;padding:20px max(20px,calc((100vw - 900px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}
+header a{color:inherit;text-decoration:none}header .brand{font:700 26px 'Cormorant Garamond',Georgia,serif}header img{width:35px;vertical-align:middle;margin-right:8px}
+main{max-width:800px;margin:55px auto;padding:0 22px 70px}h1{font:600 clamp(38px,6vw,60px)/1.1 'Cormorant Garamond',Georgia,serif;margin:10px 0}h2{font:600 30px 'Cormorant Garamond',Georgia,serif}
+.kicker{font-size:12px;letter-spacing:2px;color:#86683f;text-transform:uppercase;font-weight:600}
+.intro{color:#59594e}.panel{background:white;border:1px solid #e8e1d6;padding:clamp(20px,4vw,38px);margin-top:28px;box-shadow:0 8px 35px #1414100a}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{margin:0 0 18px}.field label{display:block;font-weight:600;font-size:13px;margin-bottom:7px}
+input,select,textarea{width:100%;border:1px solid #cfc8bb;border-radius:4px;padding:12px;font:inherit;background:#fff;color:#24241e}input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+small{color:#666;display:block;margin-top:5px}button{background:var(--green);color:white;border:0;padding:15px 24px;font:600 14px 'DM Sans',sans-serif;border-radius:4px}
+.notice{border-left:4px solid var(--gold);padding:13px 16px;background:#f5f0e8;margin:20px 0}.fallback a{color:var(--green);font-weight:600}
+@media(max-width:600px){.grid{grid-template-columns:1fr}header{padding:15px 20px}main{margin-top:35px}}
+</style></head>
+<body><header><a class="brand" href="index.html"><img src="assets/images/OfficialPLogo.png" alt="">Promised Landscaping</a><a href="tel:+18328379466">Call 832-837-9466</a></header>
+<main><span class="kicker">Houston &amp; surrounding areas</span><h1>Request a Free Quote</h1><p class="intro">Tell us about your property and what you'd like done. We'll review the details and get back to you about an estimate.</p>
+<div class="notice" role="status"><strong>Form preview — not yet accepting submissions.</strong> We're connecting secure lead storage and private photo uploads. For now, please call or email us below.</div>
+<section class="panel" aria-label="Quote request preview">
+<form id="quoteForm">
+<div class="grid"><div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div><div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div></div>
+<div class="field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email"></div>
+<div class="field"><label for="street">Property street address *</label><input id="street" name="street" autocomplete="street-address" placeholder="House number and street" required></div>
+<div class="grid"><div class="field"><label for="city">City *</label><input id="city" name="city" value="Houston" autocomplete="address-level2" required></div><div class="field"><label for="zip">ZIP code *</label><input id="zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required></div></div>
+<div class="grid"><div class="field"><label for="service">Service needed *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Mowing &amp; edging</option><option>Landscaping</option><option>Yard cleanups</option><option>Mulching</option><option>Hedge trimming</option><option>Sod installation</option></select></div><div class="field"><label for="frequency">How often?</label><select id="frequency" name="frequency"><option>One-time</option><option>Weekly</option><option>Every two weeks</option><option>Not sure yet</option></select></div></div>
+<div class="field"><label for="timing">When do you need service?</label><select id="timing" name="timing"><option>As soon as possible</option><option>Within a week</option><option>Within a month</option><option>Flexible</option></select></div>
+<div class="field"><label for="details">Describe the job</label><textarea id="details" name="details" rows="5" placeholder="Approximate yard size, cleanup needs, gates, or other details"></textarea></div>
+<div class="field"><label for="photos">Yard photos (up to 3)</label><input id="photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple disabled><small>Photo uploads will be enabled after private storage is connected. Please don't upload sensitive documents.</small></div>
+<button type="button" disabled aria-describedby="pending">Submit request (coming soon)</button><small id="pending">Submissions are disabled until secure processing is ready.</small>
+</form></section>
+<p class="fallback">Need an estimate now? <a href="tel:+18328379466">Call 832-837-9466</a> or <a href="mailto:promisedlandscapingleo@gmail.com?subject=Landscaping%20Quote%20Request">email Promised Landscaping</a>.</p>
+</main></body></html>
