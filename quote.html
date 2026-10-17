@@ -22,7 +22,7 @@ small{color:#666;display:block;margin-top:5px}button{background:var(--green);col
 <main><span class="kicker">Houston &amp; surrounding areas</span><h1>Request a Free Quote</h1><p class="intro">Tell us about your property and what you'd like done. We'll review the details and get back to you about an estimate.</p>
 <div class="notice" role="status"><strong>Form preview — not yet accepting submissions.</strong> We're connecting secure lead storage and private photo uploads. For now, please call or email us below.</div>
 <section class="panel" aria-label="Quote request preview">
-<form id="quoteForm">
+<form id="quoteForm" data-endpoint="https://lfpnltjjdgvoafaydwal.supabase.co/functions/v1/submit-quote">
 <div class="grid"><div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div><div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div></div>
 <div class="field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email"></div>
 <div class="field"><label for="street">Property street address *</label><input id="street" name="street" autocomplete="street-address" placeholder="House number and street" required></div>
@@ -35,4 +35,64 @@ small{color:#666;display:block;margin-top:5px}button{background:var(--green);col
 <button type="button" disabled aria-describedby="pending">Submit request (coming soon)</button><small id="pending">Submissions are disabled until secure processing is ready.</small>
 </form></section>
 <p class="fallback">Need an estimate now? <a href="tel:+18328379466">Call 832-837-9466</a> or <a href="mailto:promisedlandscapingleo@gmail.com?subject=Landscaping%20Quote%20Request">email Promised Landscaping</a>.</p>
-</main></body></html>
+</main>
+<script>
+(() => {
+  const form = document.getElementById("quoteForm");
+  const endpoint = form.dataset.endpoint;
+  const submitButton = form.querySelector('button[type="button"]');
+  // Deliberately disabled until authentication, staging, and abuse checks are verified.
+  const submissionsEnabled = false;
+  if (!submissionsEnabled) return;
+
+  submitButton.disabled = false;
+  submitButton.type = "submit";
+  submitButton.textContent = "Submit quote request";
+  const message = document.getElementById("pending");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const token = form.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!token) {
+      message.textContent = "Please complete the security check.";
+      return;
+    }
+    const get = (id) => document.getElementById(id).value.trim();
+    const payload = {
+      customer_name: get("name"),
+      phone: get("phone"),
+      email: get("email"),
+      street_address: get("street"),
+      city: get("city"),
+      zip_code: get("zip"),
+      service: get("service"),
+      frequency: get("frequency"),
+      preferred_timing: get("timing"),
+      project_details: get("details"),
+      turnstile_token: token
+    };
+    submitButton.disabled = true;
+    message.textContent = "Sending your request…";
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || "Unable to send your request");
+      }
+      form.reset();
+      message.textContent = "Thank you! Your request was received. We'll contact you soon.";
+    } catch (error) {
+      message.textContent = error.message || "Please try again or call us.";
+    } finally {
+      if (window.turnstile) window.turnstile.reset();
+      submitButton.disabled = false;
+    }
+  });
+})();
+</script>
+</body></html>
