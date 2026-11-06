@@ -235,9 +235,28 @@
     }
     .sticky-quote{display:none;}
     @media(max-width:600px){.sticky-quote{display:block;position:fixed;bottom:12px;left:14px;right:68px;z-index:998;text-align:center;box-shadow:0 8px 26px rgba(0,0,0,.25);}.hero{padding-bottom:35px;}body{padding-bottom:64px;}}
+
+    /* Seasonal holiday lights: decorative, non-interactive, mobile-friendly. */
+    .holiday-lights{position:fixed;top:68px;left:0;right:0;height:34px;z-index:98;pointer-events:none;overflow:hidden;display:flex;justify-content:space-around;align-items:flex-start;padding:0 4px;background:linear-gradient(to bottom,rgba(30,30,24,.5) 0 2px,transparent 2px);}
+    .holiday-lights i{position:relative;display:block;width:9px;height:17px;margin-top:5px;border-radius:45% 45% 55% 55%;background:#f7d66a;box-shadow:0 0 9px 3px rgba(255,211,90,.65);animation:holiday-glow 2.1s ease-in-out infinite alternate;transform:rotate(8deg);}
+    .holiday-lights i::before{content:'';position:absolute;top:-5px;left:2px;width:5px;height:6px;background:#494c3b;border-radius:2px;}
+    .holiday-lights i:nth-child(4n+2){background:#f06b60;box-shadow:0 0 9px 3px rgba(240,107,96,.6);animation-delay:-.8s;transform:rotate(-9deg);}
+    .holiday-lights i:nth-child(4n+3){background:#7bda9b;box-shadow:0 0 9px 3px rgba(123,218,155,.6);animation-delay:-1.4s;}
+    .holiday-lights i:nth-child(4n){background:#83c9ff;box-shadow:0 0 9px 3px rgba(131,201,255,.6);animation-delay:-.4s;}
+    @keyframes holiday-glow{from{opacity:.55;filter:brightness(.75)}to{opacity:1;filter:brightness(1.3)}}
+    .holiday-service{background:#171c17;color:#fff;padding:65px 28px;text-align:center;border-top:1px solid rgba(184,152,106,.4);border-bottom:1px solid rgba(184,152,106,.4);}
+    .holiday-service-inner{max-width:760px;margin:auto;}
+    .holiday-service h2{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);line-height:1.15;margin:12px 0 18px;color:#fff;}
+    .holiday-service p{color:rgba(255,255,255,.78);margin:0 auto 25px;max-width:600px;}
+    .holiday-service .holiday-tag{color:var(--gold-lt);font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;}
+    @media(max-width:600px){.holiday-lights i:nth-child(even){display:none}.holiday-lights{height:30px}.holiday-service{padding:52px 22px}}
+    @media(prefers-reduced-motion:reduce){.holiday-lights i{animation:none}}
   </style>
 </head>
 <body>
+
+  <!-- Decorative Christmas lights across the top of the page -->
+  <div class="holiday-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
   <!-- NAV -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -373,6 +392,16 @@
     </div>
     <div style="text-align:center;margin-top:52px;">
       <a class="btn-primary" href="tel:8328379466">📞 Call for a Quote on Any Service</a>
+    </div>
+  </section>
+
+  <!-- SEASONAL CHRISTMAS LIGHT INSTALLATION -->
+  <section class="holiday-service" id="christmas-lights" aria-labelledby="holiday-heading">
+    <div class="holiday-service-inner">
+      <span class="holiday-tag">🎄 Seasonal Service</span>
+      <h2 id="holiday-heading">Christmas Light Installation</h2>
+      <p>Make your home shine this holiday season. Ask us about Christmas light hanging for rooflines, entryways, and outdoor spaces in the Houston area. Send photos of your property for a custom quote and availability.</p>
+      <a class="btn-primary" href="sms:+18328379466?&body=Hi%20Promised%20Landscaping%2C%20I%27d%20like%20a%20quote%20for%20Christmas%20light%20installation.%20I%20can%20send%20photos%20of%20my%20home.">🎄 Text for a Holiday Lights Quote</a>
     </div>
   </section>
 
